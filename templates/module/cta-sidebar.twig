@@ -1,17 +1,14 @@
-<div class="module cta-sidebar">
+<div class="module cta">
+
     <div class="card">
-        <div class="card-body">
-            {% if module.heading %}
-            <h6 class="card-title">{{module.heading}}</h6>
-            {% endif %}
 
-            {% if module.copy %}
+        <img src="{{TimberImage(module.image).src|resize(540,300)}}" class="card-img-top cta-image">
+
+        <div class="card-body">    
+            <h2 class="h3 card-title">{{module.heading}}</h2>
             <p class="card-text">{{module.copy}}</p>
-            {% endif %}
-
-            {% if module.link %}
             <a class="btn btn-secondary" href="{{module.link.url}}" target="{{module.link.target}}">{{module.link.title}}</a>
-            {% endif %}
         </div>
     </div>
+            
 </div>

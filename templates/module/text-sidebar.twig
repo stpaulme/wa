@@ -1,7 +1,11 @@
-<div class="module embed">
+<div class="module text">
+
     {% if module.heading %}
     <h2 class="h4">{{module.heading}}</h2>
     {% endif %}
+    
+    {% if module.copy %}
+    {{module.copy}}
+    {% endif %}
 
-    {{module.embed}}
 </div>

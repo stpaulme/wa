@@ -1,15 +1,15 @@
-<div class="module hero">
+{% set image = TimberImage(module.image) %}
 
-    {% set image = TimberImage(module.image) %}
-    <img alt="{{image.alt}}" class="hero-image" src="{{image.src|resize(3000, 1000, 'center')}}">
+<div class="module hero" style="background-image: url({{image.src|resize(3000, 1000, 'center')}})">
+
+
 
     <div class="container">
         <div class="row">
-            <div class="col-md-5 offset-md-1">
-                <h1>{{module.heading}}</h1>
-            </div>
+          
 
-            <div class="col-md-5">
+            <div class="col-md-5 offset-md-7">
+                <h1>{{module.heading}}</h1>
                 <p>{{module.copy}}</p>
                 {% if module.buttons %}
                 <ul class="list-inline">

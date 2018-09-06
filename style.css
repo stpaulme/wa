@@ -11,16 +11,14 @@ header {
     margin-bottom: 60px;
 }
 
-.cta-image, .hero-image {
+.cta-image {
     max-width: 100%;
 }
 
-.hero .hero-image {
-    margin-bottom: 30px;
-}
-
-.hero-image {
-    clip-path: polygon(100% 0, 100% 90%, 0 100%, 0 0);
+.hero {
+    background-size: cover;
+    color: #fff;
+    padding: 480px 0 60px 0;
 }
 
 .cta-band {
@@ -103,15 +101,12 @@ header {
 }
 
 .image-band {
-    clip-path: polygon(0 10%, 100% 0%, 100% 90%, 0% 100%);
 }
 
 .image-band-2 .image-1 {
-    border-right: 3px solid #fff;
 }
 
 .image-band-2 .image-2 {
-    border-left: 3px solid #fff;
 }
 
 .cta-pair, .cta-group {
@@ -166,4 +161,8 @@ nav + nav {
 
 .hero {
     margin-top: 15px;
+}
+
+.hero h1, .hero p {
+    text-shadow: 1px 1px 1px #000;
 }

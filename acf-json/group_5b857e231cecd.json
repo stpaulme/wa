@@ -3,25 +3,6 @@
     "title": "Module - Post",
     "fields": [
         {
-            "key": "field_5b857e3173084",
-            "label": "Section Heading",
-            "name": "heading",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
             "key": "field_5b857e3773085",
             "label": "Post Selection",
             "name": "post_object",
@@ -37,10 +18,7 @@
             "post_type": [
                 "post"
             ],
-            "taxonomy": [
-                "category:success-stories",
-                "category:testimonials"
-            ],
+            "taxonomy": "",
             "allow_null": 0,
             "multiple": 0,
             "return_format": "object",
@@ -64,5 +42,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "",
-    "modified": 1536245704
+    "modified": 1536251337
 }
