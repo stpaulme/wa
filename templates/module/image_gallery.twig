@@ -1,0 +1,12 @@
+<div class="module gallery">
+    <div class="row">
+        {% for image in module.gallery %}
+        {% set image = TimberImage(image) %}
+
+        <div class="col-md-4">
+            <a href="{{image.src}}"><img class="mw-100" src="{{image.src|resize(800)}}" alt="{{image.alt}}" title="{{image.title}}"></a>
+        </div>
+
+        {% endfor %}      
+    </div>
+</div>

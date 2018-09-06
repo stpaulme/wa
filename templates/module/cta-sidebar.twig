@@ -1,0 +1,17 @@
+<div class="module cta-sidebar">
+    <div class="card">
+        <div class="card-body">
+            {% if module.heading %}
+            <h6 class="card-title">{{module.heading}}</h6>
+            {% endif %}
+
+            {% if module.copy %}
+            <p class="card-text">{{module.copy}}</p>
+            {% endif %}
+
+            {% if module.link %}
+            <a class="btn btn-secondary" href="{{module.link.url}}" target="{{module.link.target}}">{{module.link.title}}</a>
+            {% endif %}
+        </div>
+    </div>
+</div>

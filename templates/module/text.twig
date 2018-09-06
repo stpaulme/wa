@@ -1,0 +1,17 @@
+<div class="module text">
+    <div class="row">
+        <div class="col">
+            {% if module.heading %}
+            <h2 class="h4">{{module.heading}}</h2>
+            {% endif %}
+            
+            {% if module.copy %}
+            {{module.copy}}
+            {% endif %}
+            
+            {% if module.additional_copy %}
+            {{module.additional_copy}}
+            {% endif %}
+        </div>
+    </div>
+</div>

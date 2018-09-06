@@ -1,0 +1,25 @@
+<div class="module schools">
+    {% if module.heading %}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h2>{{module.heading}}</h2>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <div class="card-group">
+        {% for school in module.schools %}
+        {% set image = TimberImage(school.image) %}
+        <div class="card">
+            <img alt="{{image.alt}}" class="card-img-top" src="{{image.src|resize(390, 220)}}">
+            <div class="card-body">
+                <h3 class="card-title">{{school.heading}}</h3>
+                <p class="card-text">{{school.copy}}</p>
+                <a href="{{school.link.url}}" target="{{school.link.target}}" class="btn btn-secondary">{{school.link.title}}</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>

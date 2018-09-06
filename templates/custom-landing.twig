@@ -1,0 +1,11 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+    {% for module in post.get_field('modules') %}
+
+        {% include 'partial/module.twig' %}
+        
+    {% endfor %}
+
+{% endblock %}

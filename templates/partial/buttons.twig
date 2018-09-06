@@ -1,0 +1,5 @@
+<ul class="list-inline">
+    {% for button in buttons %}
+    <li class="list-inline-item"><a class="btn btn-primary" href="{{button.link.url}}" target="{{button.link.target}}">{{button.link.title}}</a></li>
+    {% endfor %}
+</ul>

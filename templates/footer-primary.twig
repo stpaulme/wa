@@ -1,0 +1,14 @@
+<div class="row">
+    <div class="col-md-3">
+        Newsletter
+    </div>
+    <div class="col-md-3 offset-md-1">
+        {% include 'menu.twig' with {'menu': footer_primary.get_items, 'ul_class': 'list-unstyled'} %}
+    </div>
+    <div class="col-md-3">
+        {% include 'menu.twig' with {'menu': footer_secondary.get_items, 'ul_class': 'list-unstyled'} %}
+    </div>
+    <div class="col-md-2">
+        Logo
+    </div>
+</div>

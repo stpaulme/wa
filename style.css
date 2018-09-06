@@ -1,0 +1,169 @@
+/*
+ * Theme Name: Ascension
+ * Author: Saint Paul Media
+*/
+
+header {
+    margin-top: 30px;
+}
+
+.module {
+    margin-bottom: 60px;
+}
+
+.cta-image, .hero-image {
+    max-width: 100%;
+}
+
+.hero .hero-image {
+    margin-bottom: 30px;
+}
+
+.hero-image {
+    clip-path: polygon(100% 0, 100% 90%, 0 100%, 0 0);
+}
+
+.cta-band {
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    overflow: hidden;
+}
+
+.cta-landing .cta-band {
+    background-position: top right; 
+}
+
+.cta-band .cta-content {
+    padding: 60px 0;
+}
+
+.cta-landing .cta-content {
+    color: #fff; 
+}
+
+.cta-home .cta-content {
+    color: #000; 
+    padding-left: 1px;
+}
+
+.cta-band .cta-content, .cta-band .cta-content:before, .cta-band .cta-content:after {
+    margin: 60px 0;
+}
+
+.cta-landing .cta-content, .cta-landing .cta-content:before, .cta-landing .cta-content:after {
+    background-color: #6c757d;
+}
+
+.cta-home .cta-content, .cta-home .cta-content:before, .cta-home .cta-content:after {
+    background-color: #ffc107;
+}
+
+.cta-band .cta-content:before, .cta-band .cta-content:after {
+    position: absolute;
+    top: 0;
+    content: '';
+    display: block;
+    height: calc(100% - 120px);
+}
+
+.cta-landing .cta-content:before {
+    left: -800px;
+    width: 800px;
+}
+
+.cta-landing .cta-content:after {
+    left: 100%;
+    clip-path: polygon(0 0, 100% 0%, 50% 100%, 0% 100%);
+    width: 60px;
+}
+
+.cta-home .cta-content:before {
+    left: -59px;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 100%);
+    width: 60px;
+}
+
+.cta-home .cta-content:after {
+    width: 800px;
+    left: 100%;
+}
+
+
+.text-two-col {
+    columns: 2;
+}
+
+.text-two-col li {
+    break-inside: avoid-column;
+}
+
+.current {
+    font-weight: bold;
+}
+
+.image-band {
+    clip-path: polygon(0 10%, 100% 0%, 100% 90%, 0% 100%);
+}
+
+.image-band-2 .image-1 {
+    border-right: 3px solid #fff;
+}
+
+.image-band-2 .image-2 {
+    border-left: 3px solid #fff;
+}
+
+.cta-pair, .cta-group {
+    background-color: #F0F0F0;
+    padding: 30px 0;
+}
+
+.menu-items {
+    background-color: #F0F0F0;
+    padding: 15px 0;
+}
+
+.menu-items ul {
+    margin-bottom: 0;
+}
+
+.page-template-custom-sidebar .module {
+    margin-bottom: 30px;
+}
+
+nav ul {
+    margin-bottom: 0;
+}
+
+.schools .card-group > .card {
+    border-radius: 0 !important;
+}
+
+.header-primary .current-menu-item, .header-primary .current-page-ancestor {
+    position: relative;
+}
+
+
+.header-primary .current-menu-item:after, .header-primary .current-page-ancestor:after {
+    display: block;
+    content: '';
+    width: 0; 
+    height: 0; 
+    border-left: 0.5rem solid transparent;
+    border-right: 0.5rem solid transparent;
+    border-bottom: 0.5rem solid #F0F0F0;
+    margin: 15px auto 0 auto;
+}
+
+nav + nav {
+    margin-top: 10px;
+}
+
+.title {
+    margin-top: 15px;
+}
+
+.hero {
+    margin-top: 15px;
+}

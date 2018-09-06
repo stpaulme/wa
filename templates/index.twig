@@ -1,0 +1,25 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-7">
+			{% for post in posts %}
+			<div class="module">
+				<h3 class="mb-1"><a href="{{post.link}}">{{post.name}}</a></h3>
+				<p class="mb-1">{{post.preview.read_more('')}}</p>
+				<small class="text-muted">{{post.date}}</small>
+			</div>
+			{% endfor %}
+
+			{% include 'partial/pagination.twig' %}
+
+		</div>
+		<div class="col-md-4 offset-md-1">
+			{% include 'sidebar-news.twig' %}
+		</div>
+	</div>
+</div>
+
+{% endblock %}

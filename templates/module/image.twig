@@ -1,0 +1,7 @@
+<div class="module image">
+    {% set image = TimberImage(module.image) %}
+    <figure class="figure">
+        <img src="{{image.src|resize('800')}}" class="figure-image img-fluid" alt="{{image.alt}}">
+        <figcaption class="figure-caption text-right">{{image.caption}}</figcaption>
+    </figure>
+</div>

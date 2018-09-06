@@ -1,0 +1,25 @@
+<div class="module hero">
+
+    {% set image = TimberImage(module.image) %}
+    <img alt="{{image.alt}}" class="hero-image" src="{{image.src|resize(3000, 1000, 'center')}}">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 offset-md-1">
+                <h1>{{module.heading}}</h1>
+            </div>
+
+            <div class="col-md-5">
+                <p>{{module.copy}}</p>
+                {% if module.buttons %}
+                <ul class="list-inline">
+                    {% for button in module.buttons %}
+                    <li class="list-inline-item"><a class="btn btn-primary" href="{{button.link.url}}" target="{{button.link.target}}">{{button.link.title}}</a></li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+   
+</div>

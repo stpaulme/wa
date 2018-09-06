@@ -1,0 +1,36 @@
+<div class="module post-feed-sidebar">
+
+    {% set category = TimberTerm(module.category) %}
+
+    {% set args = {
+        'numberposts' : module.max,
+    } %}
+
+    {% if module.post_type == 'Event' %}
+        {% set args = args|merge({
+            'meta_key' : '_EventStartDate',
+            'orderby' : 'meta_value',
+            'order' : 'ASC',
+        }) %}
+    {% else %}
+        {% set args = args|merge({
+            'order' : 'DESC',
+        }) %}
+    {% endif %}
+    
+    <div class="card">
+        
+        {% if module.heading %}
+        <div class="card-header">
+            <h6 class="mb-0">{{module.heading}}</h6>
+        </div>
+        {% endif %}
+      
+        <ul class="list-group list-group-flush">
+            {% for item in category.get_posts(args) %}
+            <li class="list-group-item"><a href="{{item.link}}">{{item.name}}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+   
+</div>

@@ -1,0 +1,52 @@
+<div class="module post-feed">
+
+    {% set category = TimberTerm(module.category) %}
+
+    {% set args = {
+        'numberposts' : module.max,
+    } %}
+
+    {% if module.post_type == 'Event' %}
+        {% set args = args|merge({
+            'meta_key' : '_EventStartDate',
+            'orderby' : 'meta_value',
+            'order' : 'ASC',
+        }) %}
+    {% else %}
+        {% set args = args|merge({
+            'order' : 'DESC',
+        }) %}
+    {% endif %}
+    
+    <div class="container">
+
+    {% if module.heading %}
+    <div class="row">
+        <div class="col">
+            <h2>{{module.heading}}</h2>
+        </div>
+    </div>
+    {% endif %}
+
+
+    <div class="row">
+    
+        {% for item in category.get_posts(args) %}
+        <div class="col-md">
+            <div class="card">
+                <div class="card-header">
+                    {{module.post_type == 'Event' ? item._EventStartDate|date("F d, Y") : item.date}}
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title"><a href="{{item.link}}">{{item.name}}</a></h4>
+                    <p class="card-text">{{item.preview.length(20).read_more('')}}</a></p>
+                    <a class="btn btn-secondary" href="{{item.link}}">Read More</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    
+    </div>
+    </div>
+            
+</div>

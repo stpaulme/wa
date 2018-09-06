@@ -1,0 +1,40 @@
+<div class="module cta-group">
+    <div class="container">
+
+        {% if module.heading %}
+        <div class="row">
+            <div class="col">
+                <h2>{{module.heading}}</h2>
+            </div>
+        </div>
+        {% endif %}
+
+        <div class="row">
+            <div class="col">
+                <div class="card-deck">
+                    {% for cta in module.cta_group %}
+                    <div class="card">
+                        {% if cta.image %}
+                        <img src="{{TimberImage(cta.image).src|resize(540,300)}}" class="card-image-top cta-image">
+                        {% endif %}
+
+                        <div class="card-body">
+                            {% if cta.heading %}
+                            <h3 class="card-title h5">{{cta.heading}}</h3>
+                            {% endif %}
+
+                            {% if cta.copy %}
+                            <p class="card-text">{{cta.copy}}</p>
+                            {% endif %}
+
+                            {% if cta.link %}
+                            <a class="btn btn-secondary" href="{{cta.link.url}}" target="{{cta.link.target}}">{{cta.link.title}}</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% endfor %}
+            </div>
+        </div>
+        
+    </div>
+</div>

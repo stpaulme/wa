@@ -1,0 +1,74 @@
+{% block html_head_container %}
+
+{% include 'html-header.twig' %}
+	{% block head %}
+	{% endblock %}
+	</head>
+{% endblock %}
+
+	<body class="{{body_class}}" data-template="base.twig">
+
+		
+
+			<div class="container">
+				<header>
+					{% block header %}
+					<div class="row">
+						<div class="col-md-6">
+							<h1 role="banner" class="h2">
+								<a href="{{site.url}}" rel="home">{{site.name}}</a>
+							</h1>
+						</div>
+						<div class="col-md-6 text-right">
+							<nav role="navigation" class="header-secondary">
+								{% include 'menu.twig' with {'menu': header_secondary.get_items, 'ul_class': 'list-inline', 'li_class': 'list-inline-item'} %}
+							</nav>
+							<nav role="navigation" class="header-primary">
+								{% include 'menu.twig' with {'menu': header_primary.get_items, 'ul_class': 'list-inline', 'li_class': 'list-inline-item'} %}
+							</nav>
+						</div>
+					{% endblock %}
+				</header>
+			</div>
+
+			
+				
+				<section role="main">
+					{% if menu_items %}
+					<div class="menu-items">
+						<div class="container">
+							<ul class="list-inline">
+								{% for item in menu_items %}
+								<li class="list-inline-item {{item.id == current ? 'current'}}"><a href="{{item.link}}">{{item.name}}</a></li>
+								{% endfor %}
+							</ul>
+						</div>
+					</div>
+					{% endif %}
+
+					{% if title %}
+					<div class="container">
+						<h1 class="title">{{title}}</h1>
+					</div>
+					{% endif %}
+
+					{% block content %}
+					Sorry, no content
+					{% endblock %}
+					
+				</section>
+
+			
+
+			<div class="container">
+				{% block footer %}
+					<footer>
+						{% include 'footer-primary.twig' %}
+						{% include 'footer-secondary.twig' %}
+					</footer>
+					{{ function('wp_footer') }}
+				{% endblock %}
+			</div>
+		
+	</body>
+</html>

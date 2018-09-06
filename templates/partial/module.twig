@@ -1,0 +1,10 @@
+{% set layout = module.acf_fc_layout %}
+{% set file =
+        [
+            'module/'~layout~'-'~post.slug~'.twig',
+            'module/'~layout~'-'~template~'.twig',
+            'module/'~layout~'.twig',
+        ]
+%}
+
+{% include file %}

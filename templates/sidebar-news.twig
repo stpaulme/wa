@@ -1,0 +1,11 @@
+<div class="card module">
+    <div class="card-header">
+        <h6 class="mb-0">Categories</h6>
+    </div>
+
+    <ul class="list-group list-group-flush">
+        {% for category in categories %}
+        <li class="list-group-item"><a href="{{category.link}}">{{category.name}}</a></li>
+        {% endfor %}
+    </ul>
+</div>

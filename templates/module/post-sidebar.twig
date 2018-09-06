@@ -1,0 +1,14 @@
+<div class="module post">
+    <div class="card">
+        <img class="card-img-top" src="{{module.post_object.thumbnail.src}}" alt="{{module.post_object.thumbnail.alt}}">
+            <div class="card-body">
+                {% if module.heading %}
+                <h6 class="card-title">{{module.heading}}</h6>
+                {% endif %}
+
+                <p class="card-text">{{ module.post_object.preview.read_more('') }}</p>
+
+                <a class="btn btn-secondary" href="{{module.post_object.link}}">Learn More About {{module.post_object.name}}</a>
+            </div>
+    </div>
+</div>
