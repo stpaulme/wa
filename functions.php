@@ -50,8 +50,11 @@ class StarterSite extends TimberSite {
 
 	function spm_enqueue() {
 		//this is where you can enqueue styles and scripts
-		wp_enqueue_style( 'bootstrap-css', get_template_directory_uri() . '/static/css/bootstrap.css' );
-		wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/static/js/bootstrap.bundle.min.js', array(), '4.0.3', true );
+		wp_enqueue_style( 'spm', get_template_directory_uri() . '/static/css/spm.css' );
+		wp_enqueue_style( 'font-awesome', '//use.fontawesome.com/releases/v5.3.1/css/all.css' );
+
+		wp_enqueue_script( 'popper', get_template_directory_uri() . '/static/js/popper.min.js' );
+		wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/static/js/bootstrap.min.js', array( 'jquery' ) );
     }
 
 	function add_to_context( $context ) {
