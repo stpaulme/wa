@@ -12,7 +12,8 @@
 
             <div class="col-md-4 offset-md-1">
                 {% for module in post.get_field('sidebar_modules') %}
-                    {% include 'partial/module.twig' %}
+                    {% set layout = module.acf_fc_layout %}
+                    {% include 'sidebar-module/'~layout~'.twig' %}
                 {% endfor %}
             </div>
         </div>
