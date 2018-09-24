@@ -2,10 +2,11 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4 offset-md-2">
-                <img src="{{TimberImage(module.image).src|resize(540,300)}}" class="cta-image">
+                {% set image = TimberImage(module.image) %}
+                <img src="{{image.src|resize(540,300)}}" class="mw-100">
             </div>
             <div class="col-md-4">
-                <h2 class="h3">{{module.heading}}</h2>
+                <h2>{{module.heading}}</h2>
                 <p>{{module.copy}}</p>
                 <a class="btn btn-secondary" href="{{module.link.url}}" target="{{module.link.target}}">{{module.link.title}}</a>
             </div>
