@@ -1,17 +1,17 @@
 @import "bootstrap";
 
-.module {
-    margin-bottom: 60px;
+.module { margin-bottom: 60px; }
+.module:last-child { margin-bottom: 0; }
+
+.sidebar-module { margin-bottom: 30px; }
+.sidebar-module:last-child { margin-bottom: 0; }
+
+footer { margin-top: 60px; }
+
+footer a:link, footer a:visited, footer a:active, footer a:hover {
+    color: inherit;
 }
 
-.module:last-child {
-    margin-bottom: 0;
-}
-
-.sidebar-module {
-    margin-bottom: 30px;
-}
-
-.sidebar-module:last-child {
-    margin-bottom: 0;
+.footer-primary, .footer-secondary {
+    margin-bottom: 15px;
 }
