@@ -1,0 +1,30 @@
+{
+  "name": "wa",
+  "version": "1.0.0",
+  "description": "Women's Advocates",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stpaulme/wa.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stpaulme/wa/issues"
+  },
+  "homepage": "https://github.com/stpaulme/wa#readme",
+  "devDependencies": {
+    "bootstrap": "^4.1.3",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssnano": "^2.1.3",
+    "gulp-sass": "^4.0.1",
+    "gulp-sourcemaps": "^2.6.4",
+    "popper.js": "^1.14.4"
+  },
+  "dependencies": {}
+}
