@@ -22,6 +22,7 @@ class StarterSite extends TimberSite {
 		add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
 		add_filter( 'timber_context', array( $this, 'add_to_context' ) );
 		add_filter( 'get_twig', array( $this, 'add_to_twig' ) );
+		add_action( 'init', array( $this, 'spm_create_options_pages' ) );
 		add_action( 'init', array( $this, 'spm_register_nav_menus' ) );
 		add_action( 'init', array( $this, 'spm_register_post_types' ) );
 		add_action( 'init', array( $this, 'spm_register_taxonomies' ) );
@@ -30,13 +31,18 @@ class StarterSite extends TimberSite {
 		parent::__construct();
 	}
 
+	function spm_create_options_pages() {
+		//this is where you can create ACF options pages
+		if( function_exists('acf_add_options_page') ) {
+			acf_add_options_page();
+		}
+	}
+
 	function spm_register_nav_menus() {
 		//this is where you can register custom nav menus
 		register_nav_menus( array(
-			'header_primary' => 'Header Primary',
-			'header_secondary' => 'Header Secondary',
-			'footer_primary' => 'Footer Primary',
-			'footer_secondary' => 'Footer Secondary',
+			'header' => 'Header',
+			'footer' => 'Footer',
 		) );
 	}
 
@@ -59,10 +65,9 @@ class StarterSite extends TimberSite {
 
 	function add_to_context( $context ) {
 		$context['categories'] = Timber::get_terms('category');
-		$context['header_primary'] = new TimberMenu( 'header_primary' );
-		$context['header_secondary'] = new TimberMenu( 'header_secondary' );
-		$context['footer_primary'] = new TimberMenu( 'footer_primary' );
-		$context['footer_secondary'] = new TimberMenu( 'footer_secondary' );
+		$context['header'] = new TimberMenu( 'header' );
+		$context['footer'] = new TimberMenu( 'footer' );
+		$context['options'] = get_fields('option');
 		$context['site'] = $this;
 		return $context;
 	}
