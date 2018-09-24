@@ -8,67 +8,62 @@
 
 	<body class="{{body_class}}" data-template="base.twig">
 
-		
-
-			<div class="container">
-				<header>
-					{% block header %}
-					<div class="row">
-						<div class="col-md-6">
-							<h1 role="banner" class="h2">
-								<a href="{{site.url}}" rel="home">{{site.name}}</a>
-							</h1>
-						</div>
-						<div class="col-md-6 text-right">
-							<nav role="navigation" class="header-secondary">
-								{% include 'menu.twig' with {'menu': header_secondary.get_items, 'ul_class': 'list-inline', 'li_class': 'list-inline-item'} %}
-							</nav>
-							<nav role="navigation" class="header-primary">
-								{% include 'menu.twig' with {'menu': header_primary.get_items, 'ul_class': 'list-inline', 'li_class': 'list-inline-item'} %}
-							</nav>
-						</div>
-					{% endblock %}
-				</header>
-			</div>
-
-			
-				
-				<section role="main">
-					{% if menu_items %}
-					<div class="menu-items">
-						<div class="container">
-							<ul class="list-inline">
-								{% for item in menu_items %}
-								<li class="list-inline-item {{item.id == current ? 'current'}}"><a href="{{item.link}}">{{item.name}}</a></li>
-								{% endfor %}
-							</ul>
-						</div>
-					</div>
-					{% endif %}
-
-					{% if title %}
+		<header>
+			{% block header %}
+				<nav class="navbar navbar-light bg-light navbar-expand-lg py-1" role="navigation">
 					<div class="container">
-						<h1 class="title">{{title}}</h1>
+						<span class="navbar-brand mb-0 h1" role="banner">
+							<a href="{{site.url}}" rel="home">{{site.name}}</a>
+						</span>
+
+						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+							<span class="navbar-toggler-icon"></span>
+						</button>
+
+						<div class="collapse navbar-collapse" id="navbarNav">
+							<div class="navbar-nav ml-auto">
+								{% include 'menu-header.twig' with {'menu': header.get_items, } %}
+							</div>
+						</div>
 					</div>
-					{% endif %}
+				</nav>
+			{% endblock %}
+		</header>
 
-					{% block content %}
-					Sorry, no content
-					{% endblock %}
-					
-				</section>
-
-			
-
+		<section role="main" class="main">
+			{% if menu_items %}
 			<div class="container">
-				{% block footer %}
-					<footer>
-						{% include 'footer-primary.twig' %}
-						{% include 'footer-secondary.twig' %}
-					</footer>
-					{{ function('wp_footer') }}
-				{% endblock %}
+				<div class="row">
+					<nav class="nav">
+						{% for item in menu_items %}
+							<a class="nav-link {{item.id == current ? 'current'}}" href="{{item.link}}">{{item.name}}</a>
+						{% endfor %}
+					</nav>
+				</div>
 			</div>
+			{% endif %}
+
+			{% if title %}
+			<div class="container">
+				<h1 class="title">{{title}}</h1>
+			</div>
+			{% endif %}
+
+			{% block content %}
+			Sorry, no content
+			{% endblock %}
+			
+		</section>
+
+		<div class="container">
+			{% block footer %}
+				<footer>
+					{% include 'footer-primary.twig' %}
+					{% include 'footer-secondary.twig' %}
+				</footer>
+				{{ function('wp_footer') }}
+			{% endblock %}
+		</div>
 		
 	</body>
 </html>

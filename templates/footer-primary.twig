@@ -1,10 +1,60 @@
-<div class="row">
-    <div class="col-md-3 offset-md-6">
-        {% include 'menu.twig' with {'menu': footer_primary.get_items, 'ul_class': 'list-unstyled'} %}
+<div class="row footer-primary text-muted">
+    <div class="col-md-4">
+        <ul class="list-unstyled">
+            {% if options.location %}
+                {% set google_map_url = options.location.google_map_url %}
+
+                <li>
+
+                {{google_map_url ? '<a href="'~google_map_url~'" target="_blank">' }}
+
+                    {% if options.location.address_line_1 %}
+                    {{options.location.address_line_1}}<br>
+                    {% endif %}
+
+                    {% if options.location.address_line_2 %}
+                    {{options.location.address_line_2}}<br>
+                    {% endif %}
+
+                    {% if options.location.city %}
+                    {{options.location.city}},
+                    {% endif %}
+
+                    {% if options.location.state %}
+                    <abbr title="{{options.location.state.label}}">{{options.location.state.value}}</abbr>
+                    {% endif %}
+
+                    {% if options.location.zip %}
+                    {{options.location.zip}}
+                    {% endif %}
+
+                {{options.location.google_map_url ? '</a>' }}
+
+                </li>
+                {% endif %}
+
+                {% if options.phone %}
+                <li><a href="tel:{{options.phone}}">{{options.phone}}</a></li>
+                {% endif %}
+        </ul>
+                
     </div>
-    <div class="col-md-3">
-        {% include 'menu.twig' with {'menu': footer_secondary.get_items, 'ul_class': 'list-unstyled'} %}
+
+    <div class="col-md-4">
+        {% include 'menu-footer.twig' with {'menu': footer.get_items,} %}
     </div>
-    <div class="col-md-2">
+
+    <div class="col-md-4 text-right">
+        {% if options.header_logo or options.footer_logo %}
+        
+            {% if options.footer_logo %}
+                {% set logo = TimberImage(options.footer_logo) %}
+            {% else %}
+                {% set logo = TimberImage(options.header_logo) %} 
+            {% endif %}
+
+            <a href="{{site.link}}"><img src="{{logo.src}}" alt="{{logo.alt}}"></a>
+
+        {% endif %}
     </div>
 </div>
