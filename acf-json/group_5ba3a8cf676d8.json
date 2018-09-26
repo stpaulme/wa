@@ -246,7 +246,26 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "33.3333",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "555.555.5555",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5babe9ec027be",
+            "label": "Crisis Line",
+            "name": "crisis_line",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33.3333",
                 "class": "",
                 "id": ""
             },
@@ -265,7 +284,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "33.3333",
                 "class": "",
                 "id": ""
             },
@@ -292,5 +311,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1537814714
+    "modified": 1537993263
 }
