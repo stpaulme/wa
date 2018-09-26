@@ -86,6 +86,6 @@ class StarterSite extends TimberSite {
 		return $twig;
 	}
  
-}
+}  
 
 new StarterSite();
