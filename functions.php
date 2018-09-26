@@ -42,7 +42,6 @@ class StarterSite extends TimberSite {
 		//this is where you can register custom nav menus
 		register_nav_menus( array(
 			'header' => 'Header',
-			'header_secondary' => 'Secondary Header',
 			'footer' => 'Footer',
 		) );
 	}
@@ -67,7 +66,6 @@ class StarterSite extends TimberSite {
 	function add_to_context( $context ) {
 		$context['categories'] = Timber::get_terms('category');
 		$context['header'] = new TimberMenu( 'header' );
-		$context['header_secondary'] = new TimberMenu( 'header_secondary' );
 		$context['footer'] = new TimberMenu( 'footer' );
 		$context['options'] = get_fields('option');
 		$context['site'] = $this;
