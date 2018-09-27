@@ -84,8 +84,8 @@
             <ul class="list-inline mb-0">
                 {% for badge in options.badges %}
                     <li class="list-inline-item">
-                        <a href="{{badge.url}}" title="{{badge.title}}" target="_blank">
-                            <img src="{{TimberImage(badge.image).src}}" alt="TimberImage(badge.image).alt" class="mw-100">
+                        <a href="{{badge.url}}" title="{{badge.name}}" target="_blank">
+                            <img src="{{TimberImage(badge.image).src}}" alt="{{TimberImage(badge.image).alt}}" class="mw-100">
                         </a>
                     </li>
                 {% endfor %}
