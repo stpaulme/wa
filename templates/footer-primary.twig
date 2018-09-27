@@ -1,7 +1,10 @@
 <div class="row footer-primary text-muted">
-    <div class="col-md-4">
-        <ul class="list-unstyled">
+    <div class="col-md-4 offset-md-2">
+        <h6 class="mb-3">{{site.name}}</h6>
+
+        
             {% if options.location %}
+            <ul class="list-unstyled mb-3">
                 {% set google_map_url = options.location.google_map_url %}
 
                 <li>
@@ -31,30 +34,63 @@
                 {{options.location.google_map_url ? '</a>' }}
 
                 </li>
-                {% endif %}
+            </ul>
+            {% endif %}
 
                 {% if options.phone %}
-                <li><a href="tel:{{options.phone}}">{{options.phone}}</a></li>
+                <ul class="list-unstyled mb-3">
+                <li>Admin: <a href="tel:{{options.phone}}">{{options.phone}}</a></li>
+                {% endif %}
+
+                {% if options.crisis_line %}
+                <li>Crisis Line: <a href="tel:{{options.crisis_line}}">{{options.crisis_line}}</a></li>
+                </ul>
                 {% endif %}
         </ul>
+
+        {% if options.social_media %}
+        <ul class="list-inline mb-3">
+            <li class="list-inline-item">
+                <span class="navbar-text d-none d-lg-inline order-lg-0 mr-lg-3">
+                    <a href="{{options.social_media.facebook}}" target="_blank" title="Facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </span>
+            </li>
+            <li class="list-inline-item">
+                <span class="navbar-text d-none d-lg-inline order-lg-0 mr-lg-3">
+                    <a href="{{options.social_media.twitter}}" target="_blank" title="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </span>
+            </li>
+        </ul>
+        {% endif %}
                 
     </div>
 
-    <div class="col-md-4">
+    <div class="col-md-4 offset-md-1">
         {% include 'menu-footer.twig' with {'menu': footer.get_items,} %}
     </div>
 
-    <div class="col-md-4 text-right">
-        {% if options.header_logo or options.footer_logo %}
-        
-            {% if options.footer_logo %}
-                {% set logo = TimberImage(options.footer_logo) %}
-            {% else %}
-                {% set logo = TimberImage(options.header_logo) %} 
-            {% endif %}
-
-            <a href="{{site.link}}"><img src="{{logo.src}}" alt="{{logo.alt}}"></a>
-
+    <div class="col-md-7 offset-md-2">
+        {% if options.disclaimer %}
+            <small>{{options.disclaimer}}</small>
         {% endif %}
     </div>
+
+    <div class="col-md-3">
+        {% if options.badges %}
+            <ul class="list-inline mb-0">
+                {% for badge in options.badges %}
+                    <li class="list-inline-item">
+                        <a href="{{badge.url}}" title="{{badge.title}}" target="_blank">
+                            <img src="{{TimberImage(badge.image).src}}" alt="TimberImage(badge.image).alt" class="mw-100">
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+
 </div>
