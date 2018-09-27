@@ -10,6 +10,51 @@
 
 		<header>
 			{% block header %}
+
+				<nav class="navbar navbar-dark bg-dark py-0">
+					<div class="container">
+						<!-- Social Media -->
+						{% if options.social_media %}
+							<span class="navbar-text d-none d-lg-inline order-lg-0 mr-lg-3">
+								<a href="{{options.social_media.facebook}}" target="_blank" title="Facebook">
+									<i class="fab fa-facebook"></i>
+								</a>
+							</span>
+							<span class="navbar-text d-none d-lg-inline order-lg-0 mr-lg-3">
+								<a href="{{options.social_media.twitter}}" target="_blank" title="Twitter">
+									<i class="fab fa-twitter"></i>
+								</a>
+							</span>
+						{% endif %}
+
+						<!-- Home -->
+						<span class="navbar-text d-none d-lg-inline order-lg-0 mr-lg-auto"><a href="/">Home</a></span>
+
+						<!-- Contact -->
+						<span class="navbar-text d-none d-lg-inline order-lg-0 mr-lg-4"><a href="/contact">Contact</a></span>
+
+						<!-- Crisis Line -->
+						<span class="navbar-text mr-4 order-2 order-md-1 mr-md-auto order-lg-0 mr-lg-4">Crisis Line: <a href="tel:{{options.crisis_line}}">{{options.crisis_line}}</a></span>
+
+						<!-- Donate -->
+						<a class="btn btn-secondary d-none d-lg-inline order-lg-0 mr-lg-4" href="/donate">Donate</a>
+
+						<!-- Emergency Exit -->
+						<a class="btn btn-warning mr-4 order-1 order-md-2 order-lg-0" href="https://google.com/">Emergency Exit</a>
+
+						<!-- Search -->
+						<form class="form-inline order-3 order-lg-0">
+							<label class="sr-only" for="search">Search</label>
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<div class="input-group-text bg-dark text-light border-0"><i class="fas fa-search"></i></div>
+								</div>
+								<input class="form-control mr-sm-2 bg-dark text-light border-0 w-50" type="search" placeholder="Search Site..." aria-label="Search" id="search">
+							</div>
+						</form>
+					</div>
+				</nav>
+
 				<nav class="navbar navbar-light bg-light navbar-expand-lg py-2" role="navigation">
 
 					<div class="container">
