@@ -1,24 +1,39 @@
 {% set image = TimberImage(module.image) %}
 
-<div class="module hero">
+<div class="module hero" style="background-image: url('{{image.src|resize(3200, 2135)}}');">
 
-    <img src="{{image.src|resize(3200, 1000, 'center')}}" alt="{{image.alt}}" class="mw-100">
+    <div class="row no-gutters">
 
-    <div class="jumbotron jumbotron-fluid m-0">
+        <div class="col-lg-5 offset-lg-7">
 
-        <div class="container text-center">
-            <h1 class="display-4">{{module.heading}}</h1>
-            <p class="lead w-50 d-inline-block mx-auto">{{module.copy}}</p>
+            <div class="hero-content">
+                    
+                <div class="container">
 
-            {% if module.buttons %}
-            <ul class="list-inline m-0">
-                {% for button in module.buttons %}
-                <li class="list-inline-item"><a class="btn btn-primary" href="{{button.link.url}}" target="{{button.link.target}}">{{button.link.title}}</a></li>
-                {% endfor %}
-            </ul>
-            {% endif %}
+                    <div class="row">
+
+                        <div class="col-md-10 offset-md-1">
+
+                            <h1 class="hero-heading">{{module.heading}}</h1>
+                            <p class="hero-copy">{{module.copy}}</p>
+                            {% if module.buttons %}
+                                <ul class="list-buttons">
+                                    {% for button in module.buttons %}
+                                        <li class="list-buttons-item"><a href="{{button.link.url}}" target="{{button.link.target}}" class="button">{{button.link.title}}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
+
+                        </div>
+
+                    </div>
+
+                </div>
+                    
+            </div>
+
         </div>
-            
+
     </div>
-   
+
 </div>

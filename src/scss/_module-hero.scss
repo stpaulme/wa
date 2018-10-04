@@ -1,0 +1,46 @@
+.hero {
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 215px;
+}
+
+.hero-content {
+    background: url('../../img/pattern.png');
+    padding: 30px 0;
+    text-align: center;
+}
+
+.hero-heading {
+    margin-bottom: 15px;
+}
+
+.hero-copy {
+    margin-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+    .hero {
+        padding-top: 515px;
+    }
+
+    .hero-content {
+        padding: 50px 0;
+    }
+
+    .hero-copy {
+        font-size: 1.125rem;
+        margin-bottom: 25px;
+    }
+}
+
+@media (min-width: 992px) {
+    .hero {
+        border-bottom: 6px solid $light-gray;
+        padding-top: 0;
+    }
+
+    .hero-content {
+        padding: 80px 0;
+        text-align: left;
+    }
+}
