@@ -8,110 +8,139 @@
 
 	<body class="{{body_class}}" data-template="base.twig">
 
-		<header>
-			{% block header %}
+		<div id="page">
 
-				<nav class="header-top-nav" role="navigation">
+			<header>
+				{% block header %}
 
-					<div class="container">
+					<nav class="header-top-nav" role="navigation">
 
-						<div class="top-nav-items">
+						<div class="container">
 
-							<!-- Social Media -->
-							{% if options.social_media %}
+							<div class="top-nav-items">
 
-								{% if options.social_media.facebook %}
-									<a class="top-nav-item top-nav-social" href="{{options.social_media.facebook}}" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+								<!-- Social Media -->
+								{% if options.social_media %}
+
+									{% if options.social_media.facebook %}
+										<a class="top-nav-item top-nav-social" href="{{options.social_media.facebook}}" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+									{% endif %}
+
+									{% if options.social_media.twitter %}
+										<a class="top-nav-item top-nav-social" href="{{options.social_media.twitter}}" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+									{% endif %}
+
 								{% endif %}
 
-								{% if options.social_media.twitter %}
-									<a class="top-nav-item top-nav-social" href="{{options.social_media.twitter}}" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+								<!-- Home -->
+								<a class="top-nav-item top-nav-home" href="/">Home</a>
+
+								<!-- Contact -->
+								<a class="top-nav-item top-nav-contact" href="/contact">Contact</a>
+
+								<!-- Crisis Line -->
+								{% if options.crisis_line %}
+									<a class="top-nav-item top-nav-crisis-line" href="tel:{{options.crisis_line}}">Crisis Line</a>
 								{% endif %}
 
-							{% endif %}
+								<!-- Donate -->
+								<a class="button button-primary top-nav-item top-nav-donate" href="/donate">Donate</a>
 
-							<!-- Home -->
-							<a class="top-nav-item top-nav-home" href="/">Home</a>
+								<!-- Emergency Exit -->
+								<a class="button button-emergency top-nav-item top-nav-emergency-exit" href="https://google.com/">Emergency Exit</a>
 
-							<!-- Contact -->
-							<a class="top-nav-item top-nav-contact" href="/contact">Contact</a>
+								<!-- Search -->
+								<form class="top-nav-item top-nav-search" method="get" action="{{site.url}}">
+									<label class="sr-only" for="search-field">Search</label>
+									<input id="search-field" name="s" type="search" placeholder="Search Site" aria-label="Search">
+								</form>
 
-							<!-- Crisis Line -->
-							{% if options.crisis_line %}
-								<a class="top-nav-item top-nav-crisis-line" href="tel:{{options.crisis_line}}">Crisis Line</a>
-							{% endif %}
-
-							<!-- Donate -->
-							<a class="button button-primary top-nav-item top-nav-donate" href="/donate">Donate</a>
-
-							<!-- Emergency Exit -->
-							<a class="button button-emergency top-nav-item top-nav-emergency-exit" href="https://google.com/">Emergency Exit</a>
-
-							<!-- Search -->
-							<form class="top-nav-item top-nav-search" method="get" action="{{site.url}}">
-								<label class="sr-only" for="search-field">Search</label>
-								<input id="search-field" name="s" type="search" placeholder="Search Site" aria-label="Search">
-							</form>
+							</div>
 
 						</div>
 
-					</div>
-
-				</nav>
-
-
-				<nav class="header-bottom-nav" role="navigation">
-
-					<div class="container">
-
-						<h1 class="logo" role="banner">
-							<a href="{{site.url}}" title="{{site.name}}" rel="home">
-								<img src="{{TimberImage(options.header_logo).src}}" alt="{{TimberImage(options.header_logo).alt}}">
-							</a>
-						</h1>
-
-						{% include 'menu.twig' with {'menu': header.get_items, 'id': 'menu-header' , 'show_children': false } %}
-
-					</div>
-
-				</nav>
-
-			{% endblock %}
-		</header>
-
-		<section role="main" class="main">
-			{% if menu_items %}
-			<div class="container">
-				<div class="row">
-					<nav class="nav">
-						{% for item in menu_items %}
-							<a class="nav-link {{item.id == current ? 'current'}}" href="{{item.link}}">{{item.name}}</a>
-						{% endfor %}
 					</nav>
+
+
+					<nav class="header-bottom-nav" role="navigation">
+
+						<div class="container">
+
+							<div class="row">
+
+								<div class="col-8 col-lg-4">
+
+									<h1 class="logo" role="banner">
+										<a href="{{site.url}}" title="{{site.name}}" rel="home">
+											<img src="{{TimberImage(options.header_logo).src}}" alt="{{TimberImage(options.header_logo).alt}}">
+										</a>
+									</h1>
+
+								</div>
+
+								<div class="col-4 col-lg-8">
+
+									<div class="mobile-menu-container">
+										{% include 'menu.twig' with {'menu': header.get_items, 'id': 'mobile-menu' , 'show_children': true } %}
+									</div>
+
+									<div class="mobile-menu-toggle-container">
+										<a id="mobile-menu-toggle" href="#">
+											<img src="{{theme.path}}/img/menu_icon.svg" alt="Mobile Menu Toggle">
+										</a>
+									</div>
+
+									<div class="desktop-menu-container">
+										{% include 'menu.twig' with {'menu': header.get_items, 'id': 'desktop-menu' , 'show_children': false } %}
+									</div>
+
+									
+
+								</div>
+
+							</div>
+
+						</div>
+
+					</nav>
+
+				{% endblock %}
+			</header>
+
+			<section role="main" class="main">
+				{% if menu_items %}
+				<div class="container">
+					<div class="row">
+						<nav class="nav">
+							{% for item in menu_items %}
+								<a class="nav-link {{item.id == current ? 'current'}}" href="{{item.link}}">{{item.name}}</a>
+							{% endfor %}
+						</nav>
+					</div>
 				</div>
-			</div>
-			{% endif %}
+				{% endif %}
 
-			{% if title %}
+				{% if title %}
+				<div class="container">
+					<h1 class="title">{{title}}</h1>
+				</div>
+				{% endif %}
+
+				{% block content %}
+				Sorry, no content
+				{% endblock %}
+				
+			</section>
+
 			<div class="container">
-				<h1 class="title">{{title}}</h1>
+				{% block footer %}
+					<footer>
+						{% include 'footer-primary.twig' %}
+					</footer>
+					{{ function('wp_footer') }}
+				{% endblock %}
 			</div>
-			{% endif %}
 
-			{% block content %}
-			Sorry, no content
-			{% endblock %}
-			
-		</section>
-
-		<div class="container">
-			{% block footer %}
-				<footer>
-					{% include 'footer-primary.twig' %}
-					{% include 'footer-secondary.twig' %}
-				</footer>
-				{{ function('wp_footer') }}
-			{% endblock %}
 		</div>
 		
 	</body>
