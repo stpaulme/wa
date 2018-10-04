@@ -132,14 +132,14 @@
 				
 			</section>
 
-			<div class="container">
-				{% block footer %}
-					<footer>
-						{% include 'footer-primary.twig' %}
-					</footer>
-					{{ function('wp_footer') }}
-				{% endblock %}
-			</div>
+			
+			{% block footer %}
+				<footer>
+					{% include 'footer.twig' %}
+				</footer>
+				{{ function('wp_footer') }}
+			{% endblock %}
+			
 
 		</div>
 		
