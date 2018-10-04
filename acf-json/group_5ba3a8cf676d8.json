@@ -327,7 +327,7 @@
                 {
                     "key": "field_5baced1284386",
                     "label": "Twitter",
-                    "name": "Twitter",
+                    "name": "twitter",
                     "type": "url",
                     "instructions": "",
                     "required": 0,
@@ -459,5 +459,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1538076758
+    "modified": 1538681602
 }
