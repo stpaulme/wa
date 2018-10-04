@@ -26,11 +26,17 @@ class StarterSite extends TimberSite {
 		add_action( 'init', array( $this, 'spm_register_nav_menus' ) );
 		add_action( 'init', array( $this, 'spm_register_post_types' ) );
 		add_action( 'init', array( $this, 'spm_register_taxonomies' ) );
+		add_filter( 'upload_mimes', array( $this, 'cc_mime_types' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'spm_enqueue' ) );
-
+		
 		parent::__construct();
 	}
 
+	function cc_mime_types($mimes) {
+		$mimes['svg'] = 'image/svg+xml';
+		return $mimes;
+	}
+	
 	function spm_create_options_pages() {
 		//this is where you can create ACF options pages
 		if( function_exists('acf_add_options_page') ) {
