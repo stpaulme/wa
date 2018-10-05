@@ -1,96 +1,95 @@
-<div class="row footer-primary text-muted">
-    <div class="col-md-4 offset-md-2">
-        <h6 class="mb-3">{{site.name}}</h6>
+<div class="row footer-primary" style="background-image: url({{TimberImage(options.footer_logo).src}});">
 
-        
-            {% if options.location %}
-            <ul class="list-unstyled mb-3">
-                {% set google_map_url = options.location.google_map_url %}
+    <div class="col-md-4 offset-md-5 offset-lg-2"> 
 
-                <li>
+        {% if options.location %}
+        <ul class="list-footer">
+            {% set google_map_url = options.location.google_map_url %}
 
-                {{google_map_url ? '<a href="'~google_map_url~'" target="_blank">' }}
+            <li class="list-footer-item">
 
-                    {% if options.location.address_line_1 %}
+            {{google_map_url ? '<a href="'~google_map_url~'" target="_blank">' }}
+
+                {% if options.location.address_line_1 %}
                     {{options.location.address_line_1}}<br>
-                    {% endif %}
+                {% endif %}
 
-                    {% if options.location.address_line_2 %}
+                {% if options.location.address_line_2 %}
                     {{options.location.address_line_2}}<br>
-                    {% endif %}
+                {% endif %}
 
-                    {% if options.location.city %}
+                {% if options.location.city %}
                     {{options.location.city}},
-                    {% endif %}
+                {% endif %}
 
-                    {% if options.location.state %}
+                {% if options.location.state %}
                     <abbr title="{{options.location.state.label}}">{{options.location.state.value}}</abbr>
-                    {% endif %}
+                {% endif %}
 
-                    {% if options.location.zip %}
+                {% if options.location.zip %}
                     {{options.location.zip}}
-                    {% endif %}
-
-                {{options.location.google_map_url ? '</a>' }}
-
-                </li>
-            </ul>
-            {% endif %}
-
-                {% if options.phone %}
-                <ul class="list-unstyled mb-3">
-                <li>Admin: <a href="tel:{{options.phone}}">{{options.phone}}</a></li>
                 {% endif %}
 
-                {% if options.crisis_line %}
-                <li>Crisis Line: <a href="tel:{{options.crisis_line}}">{{options.crisis_line}}</a></li>
-                </ul>
-                {% endif %}
+            {{options.location.google_map_url ? '</a>' }}
+
+            </li>
         </ul>
+        {% endif %}
+
+        {% if options.phone or options.crisis_line %}
+        <ul class="list-footer">
+            {% if options.phone %}
+                <li class="list-footer-item">Admin: <a href="tel:{{options.phone}}">{{options.phone}}</a></li>
+            {% endif %}
+            
+            {% if options.crisis_line %}
+                <li class="list-footer-item">Crisis Line: <a href="tel:{{options.crisis_line}}">{{options.crisis_line}}</a></li>
+            {% endif %}
+        </ul>
+        {% endif %}
 
         {% if options.social_media %}
-        <ul class="list-inline mb-3">
-            <li class="list-inline-item">
-                <span class="navbar-text d-none d-lg-inline order-lg-0 mr-lg-3">
-                    <a href="{{options.social_media.facebook}}" target="_blank" title="Facebook">
-                        <i class="fab fa-facebook"></i>
-                    </a>
-                </span>
-            </li>
-            <li class="list-inline-item">
-                <span class="navbar-text d-none d-lg-inline order-lg-0 mr-lg-3">
-                    <a href="{{options.social_media.twitter}}" target="_blank" title="Twitter">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                </span>
-            </li>
-        </ul>
-        {% endif %}
+            <ul class="list-footer">
+
+                {% if options.social_media.facebook %}
+                    <li class="list-footer-item-inline"><a href="{{options.social_media.facebook}}" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a></li>
+                {% endif %}
                 
+                {% if options.social_media.twitter %}
+                    <li class="list-footer-item-inline"><a href="{{options.social_media.twitter}}" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a></li>
+                {% endif %}
+
+            </ul>
+        {% endif %}
+
     </div>
 
-    <div class="col-md-4 offset-md-1">
-        {% include 'menu-footer.twig' with {'menu': footer.get_items,} %}
+    <div class="col-md-6 offset-md-5 col-lg-4 offset-lg-0">
+        {% include 'menu.twig' with {'menu': footer.get_items, 'id': 'footer-menu', 'show_children': false} %}
     </div>
 
-    <div class="col-md-7 offset-md-2">
+    <div class="col-md-6 offset-md-2">
         {% if options.disclaimer %}
-            <small>{{options.disclaimer}}</small>
+            <p class="disclaimer">{{options.disclaimer}}</p>
         {% endif %}
     </div>
 
-    <div class="col-md-3">
+    <div class="col-md-4">
         {% if options.badges %}
-            <ul class="list-inline mb-0">
+            <ul class="list-footer list-badges">
                 {% for badge in options.badges %}
-                    <li class="list-inline-item">
+                    <li class="list-footer-item-inline">
                         <a href="{{badge.url}}" title="{{badge.name}}" target="_blank">
-                            <img src="{{TimberImage(badge.image).src}}" alt="{{TimberImage(badge.image).alt}}" class="mw-100">
+                            <img src="{{TimberImage(badge.image).src}}" alt="{{TimberImage(badge.image).alt}}">
                         </a>
                     </li>
                 {% endfor %}
             </ul>
         {% endif %}
+    </div>
+
+    <div class="col-md-3 offset-md-9">
+        <p class="attribution"><a href="https://stpaulmedia.com/" target="_blank">Design by Saint Paul Media</a></p>
     </div>
 
 </div>

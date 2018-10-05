@@ -131,16 +131,24 @@
 				{% endblock %}
 				
 			</section>
-
 			
 			{% block footer %}
-				<footer>
-					{% include 'footer.twig' %}
+				<footer class="footer">
+
+					<div class="container">
+						{% include 'footer.twig' %}
+					</div>
+
+					<div class="row no-gutters footer-secondary">
+						<div class="col">
+							<a class="button button-emergency" href="https://google.com/">Emergency Exit</a>
+						</div>
+					</div>
+
 				</footer>
 				{{ function('wp_footer') }}
 			{% endblock %}
 			
-
 		</div>
 		
 	</body>
