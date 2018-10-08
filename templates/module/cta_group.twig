@@ -11,28 +11,45 @@
 
         
         <div class="row">
+
             {% for cta in module.cta_group %}
-            <div class="col-md-4">
-                <div class="card">
-                    {% if cta.image %}
-                    <img src="{{TimberImage(cta.image).src|resize(540,300)}}" class="card-image-top mw-100">
-                    {% endif %}
 
-                    <div class="card-body">
-                        {% if cta.heading %}
-                        <h3 class="card-title">{{cta.heading}}</h3>
-                        {% endif %}
+                <div class="col-lg-4 cta">
+                    
+                    <div class="row">
 
-                        {% if cta.copy %}
-                        <p class="card-text">{{cta.copy}}</p>
-                        {% endif %}
+                        <div class="col-md-6 col-lg-12">
 
-                        {% if cta.link %}
-                        <a class="btn btn-secondary" href="{{cta.link.url}}" target="{{cta.link.target}}">{{cta.link.title}}</a>
-                        {% endif %}
+                            {% if cta.image %}
+                                <img src="{{TimberImage(cta.image).src|resize(640,426)}}" class="cta-image">
+                            {% endif %}
+
+                        </div>
+
+                        <div class="col-md-6 col-lg-12">
+
+                            <div class="cta-text">
+
+                                {% if cta.heading %}
+                                    <h3 class="cta-heading">{{cta.heading}}</h3>
+                                {% endif %}
+
+                                {% if cta.copy %}
+                                    <p class="cta-copy">{{cta.copy}}</p>
+                                {% endif %}
+
+                                {% if cta.link %}
+                                    <a class="button button-primary" href="{{cta.link.url}}" target="{{cta.link.target}}">{{cta.link.title}}</a>
+                                {% endif %}
+                                
+                            </div>
+
+                        </div>
+
                     </div>
+
                 </div>
-            </div>
+            
             {% endfor %}
 
         </div>

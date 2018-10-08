@@ -390,5 +390,13 @@ p, ol, ul {
     display: inline-block;
 }
 
+@mixin border-bottom-salmon {
+    border-bottom: 1px solid $salmon;
+    display: inline-block;
+    padding-bottom: 5px;
+    width: 100%;
+}
+
+@import "module-cta-group";
 @import "module-hero";
 @import "module-image-band";
