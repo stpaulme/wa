@@ -36,7 +36,8 @@
                                 "id": ""
                             },
                             "clone": [
-                                "group_5b7ed8fa4ceed"
+                                "field_5b7ed90135180",
+                                "field_5b7ed90635181"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -78,41 +79,10 @@
                     "min": "",
                     "max": ""
                 },
-                "layout_5b859f01bdda8": {
-                    "key": "layout_5b859f01bdda8",
-                    "name": "image_gallery",
-                    "label": "Image Gallery",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_5b859f06bdda9",
-                            "label": "Image Gallery",
-                            "name": "image_gallery",
-                            "type": "clone",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "clone": [
-                                "group_5b859e6511a63"
-                            ],
-                            "display": "seamless",
-                            "layout": "block",
-                            "prefix_label": 0,
-                            "prefix_name": 0
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
-                },
                 "layout_5b800432c20f4": {
                     "key": "layout_5b800432c20f4",
                     "name": "embed",
-                    "label": "Video",
+                    "label": "Video or Other Embedded Content",
                     "display": "block",
                     "sub_fields": [
                         {
@@ -220,37 +190,6 @@
                     ],
                     "min": "",
                     "max": ""
-                },
-                "layout_5b85811f990f9": {
-                    "key": "layout_5b85811f990f9",
-                    "name": "post",
-                    "label": "Post",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_5b85813d990fa",
-                            "label": "Post",
-                            "name": "post",
-                            "type": "clone",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "clone": [
-                                "group_5b857e231cecd"
-                            ],
-                            "display": "seamless",
-                            "layout": "block",
-                            "prefix_label": 0,
-                            "prefix_name": 0
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
                 }
             },
             "button_label": "Add Sidebar Module",
@@ -277,5 +216,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1536249115
+    "modified": 1539026949
 }
