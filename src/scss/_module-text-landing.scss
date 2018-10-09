@@ -1,0 +1,29 @@
+.text-content :last-child {
+    margin-bottom: 0;
+}
+
+.text-image {
+    margin-bottom: 30px;
+    max-width: 100%;
+}
+
+.text-heading {
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.text-heading:after {
+    position: absolute;
+    bottom: 0;
+    background-color: $salmon;
+    content: '';
+    display: block;
+    width: 40px;
+    height: 2px;
+}
+
+@media (min-width: 992px) {
+    .text-image {
+        margin-bottom: 0;
+    }
+}
