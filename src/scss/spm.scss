@@ -406,7 +406,23 @@ p, ol, ul {
     width: 100%;
 }
 
+@mixin border-bottom-salmon-partial {
+    position: relative;
+    padding-bottom: 10px;
+
+    &:after {
+        position: absolute;
+        bottom: 0;
+        background-color: $salmon;
+        content: '';
+        display: block;
+        width: 40px;
+        height: 2px;
+    }
+}
+
 @import "module-cta-group";
+@import "module-embed";
 @import "module-hero";
 @import "module-hero-landing";
 @import "module-image";

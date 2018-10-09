@@ -8,18 +8,7 @@
 }
 
 .text-heading {
-    position: relative;
-    padding-bottom: 10px;
-}
-
-.text-heading:after {
-    position: absolute;
-    bottom: 0;
-    background-color: $salmon;
-    content: '';
-    display: block;
-    width: 40px;
-    height: 2px;
+    @include border-bottom-salmon-partial;
 }
 
 @media (min-width: 992px) {
