@@ -6,6 +6,10 @@
 .sidebar-module { margin-bottom: 30px; }
 .sidebar-module:last-child { margin-bottom: 0; }
 
+.module a, .sidebar-module a {
+    font-weight: bold;
+}
+
 .footer {
     background-color: $dark_purple;
     color: #fff !important;
@@ -106,6 +110,11 @@
         margin-top: 15px;
         margin-bottom: 20px;
     }
+}
+
+a[href^='tel'] {
+    color: inherit;
+    font-weight: inherit;
 }
 
 body {

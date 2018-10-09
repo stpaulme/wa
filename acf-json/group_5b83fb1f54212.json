@@ -3,25 +3,6 @@
     "title": "Module - CTA Group",
     "fields": [
         {
-            "key": "field_5b83fb1f58c8c",
-            "label": "Section Heading",
-            "name": "heading",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
             "key": "field_5bbbaf7035dda",
             "label": "Background Pattern",
             "name": "background_pattern",
@@ -41,6 +22,25 @@
             "ui_off_text": "Hide"
         },
         {
+            "key": "field_5b83fb1f58c8c",
+            "label": "Section Heading",
+            "name": "heading",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_5b83fb1f58d17",
             "label": "CTA Group",
             "name": "cta_group",
@@ -56,7 +56,7 @@
             "collapsed": "",
             "min": 3,
             "max": 0,
-            "layout": "table",
+            "layout": "block",
             "button_label": "Add CTA",
             "sub_fields": [
                 {
@@ -100,5 +100,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "",
-    "modified": 1539026881
+    "modified": 1539102143
 }

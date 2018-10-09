@@ -1,4 +1,4 @@
-<div class="module cta-group">
+<div class="module cta-group {{module.background_pattern == true ? 'background-pattern'}}">
     <div class="container">
 
         {% if module.heading %}
@@ -18,24 +18,26 @@
                     
                     <div class="row">
 
+                        {% if cta.image %}
                         <div class="col-md-6 col-lg-12">
 
-                            {% if cta.image %}
+                            
                                 <img src="{{TimberImage(cta.image).src|resize(640,426)}}" class="cta-image">
-                            {% endif %}
+                            
 
                         </div>
+                        {% endif %}
 
-                        <div class="col-md-6 col-lg-12">
+                        <div class="col-md col-lg-12">
 
-                            <div class="cta-text">
+                            <div class="cta-text {{cta.image ? 'with-image' : 'without-image'}}">
 
                                 {% if cta.heading %}
                                     <h3 class="cta-heading">{{cta.heading}}</h3>
                                 {% endif %}
 
                                 {% if cta.copy %}
-                                    <p class="cta-copy">{{cta.copy}}</p>
+                                    {{cta.copy}}
                                 {% endif %}
 
                                 {% if cta.link %}
