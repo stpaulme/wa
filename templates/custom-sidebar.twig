@@ -4,18 +4,20 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-md-7">
+            <div class="col-md-7 modules">
                 {% for module in post.get_field('modules') %}
                     {% include 'partial/module.twig' %}
                 {% endfor %}
             </div>
 
-            <div class="col-md-4 offset-md-1">
-                {% for module in post.get_field('sidebar_modules') %}
-                    {% set layout = module.acf_fc_layout %}
-                    {% include 'sidebar-module/'~layout~'.twig' %}
-                {% endfor %}
-            </div>
+            {% if post.get_field('sidebar_modules') %}
+                <div class="col-md-4 offset-md-1 sidebar-modules">
+                    {% for module in post.get_field('sidebar_modules') %}
+                        {% set layout = module.acf_fc_layout %}
+                        {% include 'sidebar-module/'~layout~'.twig' %}
+                    {% endfor %}
+                </div>
+            {% endif %}
         </div>
     </div>
 

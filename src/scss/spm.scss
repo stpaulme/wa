@@ -3,8 +3,13 @@
 .module { margin-bottom: 60px; }
 .module:last-child { margin-bottom: 0; }
 
+.sidebar-modules { margin-top: 40px; }
 .sidebar-module { margin-bottom: 30px; }
 .sidebar-module:last-child { margin-bottom: 0; }
+
+@media (min-width: 768px) {
+    .sidebar-modules { margin-top: 0; }
+}
 
 .module a, .sidebar-module a {
     font-weight: bold;
@@ -429,3 +434,4 @@ p, ol, ul {
 @import "module-image-band";
 @import "module-overview";
 @import "module-text-landing";
+@import "sidebar-module-cta";
