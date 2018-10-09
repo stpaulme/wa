@@ -1,11 +1,15 @@
 <div class="module text">
 
-    {% if module.heading %}
-    <h2>{{module.heading}}</h2>
-    {% endif %}
-    
-    {% if module.copy %}
-    {{module.copy}}
-    {% endif %}
+    <div class="text-content">
+
+        {% if module.heading %}
+        <h2 class="text-heading">{{module.heading}}</h2>
+        {% endif %}
+        
+        {% if module.copy %}
+        {{module.copy}}
+        {% endif %}
+
+    </div>
 
 </div>
