@@ -390,7 +390,7 @@ p, ol, ul {
     display: inline-block;
 }
 
-@mixin border-bottom-salmon {
+@mixin border-bottom-salmon-full {
     border-bottom: 1px solid $salmon;
     display: inline-block;
     padding-bottom: 5px;
@@ -400,3 +400,4 @@ p, ol, ul {
 @import "module-cta-group";
 @import "module-hero";
 @import "module-image-band";
+@import "module-overview";

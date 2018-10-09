@@ -1,0 +1,35 @@
+<div class="module overview">
+    <div class="container">
+        <div class="row">
+            <!-- Primary -->
+            <div class="col-md-7">
+                {% if module.primary.heading %}
+                    <h1 class="overview-heading">{{module.primary.heading}}</h1>
+                {% endif %}
+
+                {% if module.primary.copy %}
+                    {{module.primary.copy}}
+                {% endif %}
+            </div>
+
+            <!-- Secondary -->
+            <div class="col-md-5 col-lg-4 offset-lg-1">
+                {% if module.secondary.blurbs %}
+
+                    {% for blurb in module.secondary.blurbs %}
+                        
+                        {% if blurb.heading %}
+                            <h3 class="blurb-heading">{{blurb.heading}}</h3>
+                        {% endif %}
+
+                        {% if blurb.heading %}
+                            {{blurb.copy}}
+                        {% endif %}
+
+                    {% endfor %}
+
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
