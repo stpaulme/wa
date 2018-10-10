@@ -1,7 +1,13 @@
 <?php
 
 function spm_is_local() {
-	return !checkdnsrr($_SERVER['SERVER_NAME'], 'NS');
+	$is_local = true;
+
+	if ( checkdnsrr($_SERVER['SERVER_NAME'], 'NS') == true ) {
+		$is_local = false;
+	}
+
+	return $is_local;
 }
 
 if ( ! class_exists( 'Timber' ) ) {
