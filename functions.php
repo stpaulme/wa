@@ -1,13 +1,7 @@
 <?php
 
 function spm_is_local() {
-	$is_local = true;
-
-	if( $_SERVER['REMOTE_ADDR'] != '127.0.0.1' ) {
-		$is_local = false;
-	}
-
-	return $is_local;
+	return !checkdnsrr($_SERVER['SERVER_NAME'], 'NS');
 }
 
 if ( ! class_exists( 'Timber' ) ) {
