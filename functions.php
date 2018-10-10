@@ -1,9 +1,20 @@
 <?php
 
 function spm_is_local() {
+	$local_ip_addresses = [
+		// IPv4 address
+		'127.0.0.1', 
+	
+		// IPv6 address
+		'::1',
+
+		// Local by Flywheel
+		'172.17.0.1',
+	];
+
 	$is_local = true;
 
-	if ( checkdnsrr($_SERVER['SERVER_NAME'], 'NS') == true ) {
+	if ( !in_array( $_SERVER['REMOTE_ADDR'], $local_ip_addresses ) ) {
 		$is_local = false;
 	}
 
