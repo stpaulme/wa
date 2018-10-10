@@ -1,5 +1,15 @@
 <?php
 
+function spm_is_local() {
+	$is_local = true;
+
+	if( $_SERVER['REMOTE_ADDR'] != '127.0.0.1' ) {
+		$is_local = false;
+	}
+
+	return $is_local;
+}
+
 if ( ! class_exists( 'Timber' ) ) {
 	add_action( 'admin_notices', function() {
 		echo '<div class="error"><p>Timber not activated. Make sure you activate the plugin in <a href="' . esc_url( admin_url( 'plugins.php#timber' ) ) . '">' . esc_url( admin_url( 'plugins.php') ) . '</a></p></div>';
@@ -22,6 +32,9 @@ class StarterSite extends TimberSite {
 		add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
 		add_filter( 'timber_context', array( $this, 'add_to_context' ) );
 		add_filter( 'get_twig', array( $this, 'add_to_twig' ) );
+		if ( spm_is_local() == false ) {
+			add_filter( 'acf/settings/show_admin', array( $this, '__return_false' ) );
+		}
 		add_action( 'init', array( $this, 'spm_create_options_pages' ) );
 		add_action( 'init', array( $this, 'spm_register_nav_menus' ) );
 		add_action( 'init', array( $this, 'spm_register_post_types' ) );
