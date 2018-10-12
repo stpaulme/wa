@@ -393,7 +393,7 @@ p, ol, ul {
         position: relative;
     }
 
-    .current-menu-item:after, .current-page-ancestor:after {
+    :not(.menu-item-object-custom).current-menu-item:after, :not(.menu-item-object-custom).current-page-ancestor:after {
         position: absolute;
         bottom: 0;
         left: 50%;
