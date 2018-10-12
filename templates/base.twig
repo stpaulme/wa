@@ -109,13 +109,19 @@
 
 			<section role="main" class="main">
 				{% if menu_items %}
-				<div class="container">
-					<div class="row">
-						<nav class="nav">
-							{% for item in menu_items %}
-								<a class="nav-link {{item.id == current ? 'current'}}" href="{{item.link}}">{{item.name}}</a>
-							{% endfor %}
-						</nav>
+				<div class="sibling-menu-container">
+					<div class="container">
+						<div class="row">
+							<div class="col">
+								<ul class="sibling-menu-list">
+									{% for item in menu_items %}
+										<li class="sibling-menu-item {{item.id == current ? 'current'}}">
+											<a href="{{item.link}}">{{item.name}}</a>
+										</li>
+									{% endfor %}
+								</ul>
+							</div>
+						</div>
 					</div>
 				</div>
 				{% endif %}
