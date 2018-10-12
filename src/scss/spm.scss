@@ -193,8 +193,8 @@ p, ol, ul {
     color: #fff;
 }
 .header-top-nav .container {
-    padding-right: 0;
     padding-left: 0;
+    padding-right: 0;
 }
 .top-nav-items {
     align-items: baseline;
@@ -240,8 +240,8 @@ p, ol, ul {
 #search-field:-moz-placeholder { color: #fff; }
 @media (min-width: 768px) {
     .header-top-nav .container {
-        padding-right: unset;
-        padding-left: unset;
+        padding-left: 15px;
+        padding-right: 15px;
     }
     .top-nav-items {
         flex-wrap: nowrap;
@@ -264,7 +264,7 @@ p, ol, ul {
         order: 3;
     }
     #search-field {
-        width: 90px;
+        width: initial;
     }
 }
 @media (min-width: 992px) {

@@ -16,47 +16,49 @@
 					<nav class="header-top-nav" role="navigation">
 
 						<div class="container">
+							<div class="row">
+								<div class="col">
+									<div class="top-nav-items">
 
-							<div class="top-nav-items">
+										<!-- Social Media -->
+										{% if options.social_media %}
 
-								<!-- Social Media -->
-								{% if options.social_media %}
+											{% if options.social_media.facebook %}
+												<a class="top-nav-item top-nav-social" href="{{options.social_media.facebook}}" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+											{% endif %}
 
-									{% if options.social_media.facebook %}
-										<a class="top-nav-item top-nav-social" href="{{options.social_media.facebook}}" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
-									{% endif %}
+											{% if options.social_media.twitter %}
+												<a class="top-nav-item top-nav-social" href="{{options.social_media.twitter}}" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+											{% endif %}
 
-									{% if options.social_media.twitter %}
-										<a class="top-nav-item top-nav-social" href="{{options.social_media.twitter}}" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
-									{% endif %}
+										{% endif %}
 
-								{% endif %}
+										<!-- Home -->
+										<a class="top-nav-item top-nav-home" href="/">Home</a>
 
-								<!-- Home -->
-								<a class="top-nav-item top-nav-home" href="/">Home</a>
+										<!-- Contact -->
+										<a class="top-nav-item top-nav-contact" href="/contact">Contact</a>
 
-								<!-- Contact -->
-								<a class="top-nav-item top-nav-contact" href="/contact">Contact</a>
+										<!-- Crisis Line -->
+										{% if options.crisis_line %}
+											<a class="top-nav-item top-nav-crisis-line" href="tel:{{options.crisis_line}}">Crisis Line</a>
+										{% endif %}
 
-								<!-- Crisis Line -->
-								{% if options.crisis_line %}
-									<a class="top-nav-item top-nav-crisis-line" href="tel:{{options.crisis_line}}">Crisis Line</a>
-								{% endif %}
+										<!-- Donate -->
+										<a class="button button-primary top-nav-item top-nav-donate" href="/donate">Donate</a>
 
-								<!-- Donate -->
-								<a class="button button-primary top-nav-item top-nav-donate" href="/donate">Donate</a>
+										<!-- Emergency Exit -->
+										<a class="button button-emergency top-nav-item top-nav-emergency-exit" href="https://google.com/">Emergency Exit</a>
 
-								<!-- Emergency Exit -->
-								<a class="button button-emergency top-nav-item top-nav-emergency-exit" href="https://google.com/">Emergency Exit</a>
+										<!-- Search -->
+										<form class="top-nav-item top-nav-search" method="get" action="{{site.url}}">
+											<label class="sr-only" for="search-field">Search</label>
+											<input id="search-field" name="s" type="search" placeholder="Search Site..." aria-label="Search" size="11">
+										</form>
 
-								<!-- Search -->
-								<form class="top-nav-item top-nav-search" method="get" action="{{site.url}}">
-									<label class="sr-only" for="search-field">Search</label>
-									<input id="search-field" name="s" type="search" placeholder="Search Site" aria-label="Search">
-								</form>
-
+									</div>
+								</div>
 							</div>
-
 						</div>
 
 					</nav>
@@ -123,12 +125,6 @@
 							</div>
 						</div>
 					</div>
-				</div>
-				{% endif %}
-
-				{% if title %}
-				<div class="container">
-					<h1 class="title">{{title}}</h1>
 				</div>
 				{% endif %}
 
