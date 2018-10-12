@@ -1,5 +1,15 @@
 {% extends "base.twig" %}
 
 {% block content %}
-	Sorry, we couldn't find what you're looking for.
+	<div class="not-found-pattern">
+		<div class="container">
+			<div class="row without-hero">
+				<div class="col-md-7">
+					<h1>Page not found</h1>
+					<p>Sorry, we couldn't find what you're looking for.</p>
+					<a class="button button-primary" href="{{site.link}}">Home</a>
+				</div>
+			</div>
+		</div>
+	</div>
 {% endblock %}
