@@ -499,6 +499,49 @@ p, ol, ul {
     }
 }
 
+/* BLOG */
+.blog footer, .single-post footer {
+    margin-top: 0;
+}
+
+.date {
+    display: inline-block;
+    border-bottom: 1px solid $light_gray;
+    font-size: 1rem;
+    line-height: 1.4;
+    padding: 0 5px 5px 0;
+    margin: 0 0 10px 0;
+}
+
+.pagination a {
+    font-weight: normal;
+}
+
+.prev {
+    text-align: right;
+}
+
+.back {
+    display: inline-block;
+    margin-top: 60px;
+}
+
+.blog-pattern {
+    background-image: url('../../img/pattern_blog.png');
+    border-top: 6px solid $light-gray;
+    padding: 15px 0;
+}
+
+.blog-pattern .col-md-7 {
+    background-color: #fff;
+    padding: 15px;
+}
+
+/* EVENTS */
+.events-pattern {
+    border-top: 6px solid $light-gray;
+}
+
 @import "module-cta-group";
 @import "module-embed";
 @import "module-hero";
