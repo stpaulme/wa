@@ -312,6 +312,9 @@ p, ol, ul {
 .logo {
     margin: 15px 0;
 }
+.logo img {
+    max-height: 84px;
+}
 .mobile-menu-container {
     display: none;
 }
