@@ -542,6 +542,11 @@ p, ol, ul {
     border-top: 6px solid $light-gray;
 }
 
+/* SEARCH */
+.search-pattern {
+    border-top: 6px solid $light-gray;
+}
+
 @import "module-cta-group";
 @import "module-embed";
 @import "module-hero";
