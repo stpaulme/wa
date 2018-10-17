@@ -5,12 +5,13 @@
     {% set hero = post.get_field('hero') %}
     {% set image = TimberImage(hero.image) %}
     
-    {% if hero %}
+    {% if hero.image|length > 0 %}
         <div class="module hero-landing" style="background-image: url('{{image.src|resize(3200, 2135)}}');"></div>
     {% endif %}
 
     <div class="container">
-        <div class="row {{hero ? 'with-hero' : 'without-hero'}}">
+        <div class="row {{hero.image|length > 0 ? 'with-hero' : 'without-hero'}}">
+        
             <div class="col-md-7 modules">
                 {% if title %}
 					<h1 class="title">{{title}}</h1>
