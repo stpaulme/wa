@@ -14,7 +14,7 @@
     background-color: $pink; 
 }
 
-.post-type-event h2 {
+.post-feed.post-type-event h2 {
     color: #fff;
 }
 
@@ -41,7 +41,7 @@
     display: inline;
 }
 
-.feed-post-date:after {
+.post-feed .feed-post-date:after {
     color: $light-gray;
     content: ' |';
 }
@@ -78,7 +78,7 @@
 }
 
 @media (min-width: 768px) {
-    .post-type-post { padding: 50px 0; }
+    .post-feed { padding: 50px 0; }
     .post-type-post .feed-post { margin-bottom: 30px; }
 }
 

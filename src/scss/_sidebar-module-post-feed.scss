@@ -1,0 +1,44 @@
+.post-feed-sidebar {
+    padding: 20px;
+}
+
+.feed-sidebar-content {
+    background-color: #fff;
+    padding: 25px 20px;
+}
+
+.feed-sidebar-content ul {
+    list-style: none;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+
+.feed-sidebar-content li {
+    border-bottom: 1px solid $light-gray;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+}
+
+.feed-sidebar-content li:last-child {
+    border-bottom: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.feed-sidebar-content h4 {
+    margin-bottom: 0;
+}
+
+.feed-sidebar-date {
+    font-size: 0.875rem;
+    font-style: italic;
+    line-height: 1.5;
+    margin-bottom: 5px;
+}
+
+.feed-sidebar-content .duration {
+    display: block;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin-bottom: 5px;
+}

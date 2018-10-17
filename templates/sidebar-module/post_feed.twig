@@ -1,36 +1,46 @@
-<div class="sidebar-module post-feed-sidebar">
+{% set post_type = module.post_type %}
 
-    {% set category = TimberTerm(module.category) %}
+<div class="sidebar-module post-feed-sidebar post-type-{{post_type}}">
 
-    {% set args = {
-        'numberposts' : module.max,
-    } %}
+    <div class="feed-sidebar-content">
 
-    {% if module.post_type == 'Event' %}
-        {% set args = args|merge({
-            'meta_key' : '_EventStartDate',
-            'orderby' : 'meta_value',
-            'order' : 'ASC',
-        }) %}
+    {% if post_type == 'event' %}
+        {% set category = module.event_category %}
     {% else %}
-        {% set args = args|merge({
+        {% set category = TimberTerm(module.post_category) %}
+        {% set args = {
+            'numberposts' : module.max,
             'order' : 'DESC',
-        }) %}
+        } %}
+        {% set items = category.get_posts(args) %} 
     {% endif %}
-    
-    <div class="card">
-        
-        {% if module.heading %}
-        <div class="card-header">
-            <h6 class="mb-0">{{module.heading}}</h6>
-        </div>
-        {% endif %}
-      
-        <ul class="list-group list-group-flush">
-            {% for item in category.get_posts(args) %}
-            <li class="list-group-item"><a href="{{item.link}}">{{item.name}}</a></li>
-            {% endfor %}
+
+    {% set events %}
+
+        {% filter shortcodes %}
+
+            [ecs-list-events cat='{{category.slug}}' limit='{{module.max}}' excerpt='false' viewall='false' contentorder='date, title']
+
+        {% endfilter %}
+
+    {% endset %}
+
+    {% set blog_posts %}
+        <ul>
+        {% for item in items %}
+            <li class="feed-post">
+                <p class="feed-sidebar-date">{{item.date|date("l, F j")}}</p>
+                <h4 class="feed-sidebar-title"><a href="{{item.link}}">{{item.name}}</a></h4>
+            </li>
+        {% endfor %}
         </ul>
-    </div>
-   
+    {% endset %}
+
+    {% if module.heading %}
+        <h2>{{module.heading}}</h2>
+    {% endif %}
+
+    {{post_type == 'event' ? events : blog_posts}}
+
+</div>
 </div>
