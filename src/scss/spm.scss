@@ -315,7 +315,8 @@ p, ol, ul {
     margin: 15px 0;
 }
 .logo img {
-    max-height: 84px;
+    max-height: 103px;
+    max-width: 300px;
 }
 .mobile-menu-container {
     display: none;
@@ -456,7 +457,11 @@ p, ol, ul {
     background-color: $pink;
 }
 .button.button-primary:active, .button.button-primary:hover {
-    background-color: lighten($pink, 15%);
+    background-color: $dark_purple;
+}
+
+.button.button-primary.top-nav-donate:active, .button.button-primary.top-nav-donate:hover {
+    background-color: $pink;
 }
 
 .button.button-emergency:link, .button.button-emergency:visited {
@@ -464,7 +469,7 @@ p, ol, ul {
     color: $dark_purple !important;
 }
 .button.button-emergency:active, .button.button-emergency:hover {
-    background-color: lighten($yellow, 15%);
+    background-color: $yellow;
 }
 
 .list-buttons {
