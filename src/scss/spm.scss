@@ -425,11 +425,11 @@ p, ol, ul {
 
 /* HEADER BOTTOM NAV INDICATORS */
 @media (min-width: 992px) {
-    .current-menu-item, .current-page-ancestor {
+    #desktop-menu .current-menu-item, #desktop-menu .current-page-ancestor {
         position: relative;
     }
 
-    :not(.menu-item-object-custom).current-menu-item:after, :not(.menu-item-object-custom).current-page-ancestor:after {
+    #desktop-menu :not(.menu-item-object-custom).current-menu-item:after, #desktop-menu :not(.menu-item-object-custom).current-page-ancestor:after {
         position: absolute;
         bottom: 0;
         left: 50%;
