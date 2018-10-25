@@ -54,11 +54,19 @@
             <ul class="list-footer">
 
                 {% if options.social_media.facebook %}
-                    <li class="list-footer-item-inline"><a href="{{options.social_media.facebook}}" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a></li>
+                    <li class="list-footer-item-inline">
+                        <a href="{{options.social_media.facebook}}" target="_blank" title="Facebook">
+                            <i class="soc soc-facebook"></i>
+                        </a>
+                    </li>
                 {% endif %}
                 
                 {% if options.social_media.twitter %}
-                    <li class="list-footer-item-inline"><a href="{{options.social_media.twitter}}" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a></li>
+                    <li class="list-footer-item-inline">
+                        <a href="{{options.social_media.twitter}}" target="_blank" title="Twitter">
+                            <i class="soc soc-twitter"></i>
+                        </a>
+                    </li>
                 {% endif %}
 
             </ul>
