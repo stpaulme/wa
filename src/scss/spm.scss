@@ -1,7 +1,8 @@
 @import "bootstrap";
 
 .module { margin-bottom: 60px; }
-.blog .module { margin-bottom: 40px; }
+.module :last-child { margin-bottom: 0;}
+.blog .module, .single .module { margin-bottom: 40px; }
 .page-template-custom-sidebar .module { margin-bottom: 50px; }
 .module:last-child { margin-bottom: 0; }
 
