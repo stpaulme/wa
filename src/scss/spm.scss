@@ -72,6 +72,14 @@
     padding-left: 0;
 }
 
+#footer-menu li {
+    margin-bottom: 22px;
+}
+
+#footer-menu li:last-child {
+    margin-bottom: 0;
+}
+
 .disclaimer, .attribution {
     font-size: 0.65rem;
     line-height: 1.3;
