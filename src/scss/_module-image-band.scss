@@ -1,8 +1,9 @@
 .image-band-image {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 213px;
+    max-width: 100%;
+}
+
+.image-band-image-1 {
+    text-align: right;
 }
 
 .image-band-image-2 {
@@ -10,16 +11,8 @@
 }
 
 @media (min-width: 768px) {
-    .image-band-image {
-        height: 207px;
-    }
     .image-band-image-2 {
         display: block;
-    }
-}
-
-@media (min-width: 992px) {
-    .image-band-image {
-        height: 276px;
+        text-align: left;
     }
 }
