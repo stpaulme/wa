@@ -77,36 +77,6 @@
             "multiple": 0
         },
         {
-            "key": "field_5b84605d0105e",
-            "label": "Event Category",
-            "name": "event_category",
-            "type": "taxonomy",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_5b845fc90105d",
-                        "operator": "==",
-                        "value": "Event"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "taxonomy": "tribe_events_cat",
-            "field_type": "select",
-            "allow_null": 0,
-            "add_term": 0,
-            "save_terms": 0,
-            "load_terms": 0,
-            "return_format": "object",
-            "multiple": 0
-        },
-        {
             "key": "field_5b844c0d3fdb5",
             "label": "Number of Posts to Show",
             "name": "max",
@@ -145,5 +115,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "",
-    "modified": 1539785180
+    "modified": 1540925553
 }
