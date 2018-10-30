@@ -1,4 +1,5 @@
 {% set image = TimberImage(module.image) %}
 
-<div class="module hero-landing" style="background-image: url('{{image.src|resize(3200, 2135, 'left')}}');">
+<div class="module hero-landing">
+    <img alt="{{image.alt}}" class="hero-landing-image" src="{{image.src|resize(2048, 552, 'center')}}">
 </div>

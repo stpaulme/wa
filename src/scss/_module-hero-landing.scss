@@ -1,19 +1,13 @@
 .hero-landing {
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 86px;
     margin-bottom: 30px;
+}
+
+.hero-landing-image {
+    max-width: 100%;
 }
 
 @media (min-width: 768px) {
     .hero-landing {
-        height: 207px;
         margin-bottom: 50px;
-    }
-}
-
-@media (min-width: 992px) {
-    .hero-landing {
-        height: 276px;
     }
 }
