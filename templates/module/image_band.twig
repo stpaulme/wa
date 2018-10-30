@@ -2,8 +2,7 @@
     <div class="row no-gutters">
 
         {% for image in module.image_band %}
-            <div class="col-md image-band-image-{{loop.index}}">
-                <img src="{{TimberImage(image.image).src|resize(1000,500)}}" class="image-band-image">
+            <div class="col-md image-band-image image-band-image-{{loop.index}}" style="background-image: url({{TimberImage(image.image).src|resize(1024,552, 'center')}});">
             </div>
         {% endfor %}
 
