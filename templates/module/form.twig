@@ -1,3 +1,7 @@
+{% if template == 'landing' %}
+    <div class="container">
+{% endif %}
+
 <div class="module form">
 
     {% if module.heading %}
@@ -9,3 +13,7 @@
     {% endfilter %}
 
 </div>
+
+{% if template == 'landing' %}
+    </div>
+{% endif %}
