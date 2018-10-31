@@ -1,0 +1,11 @@
+<div class="module form">
+
+    {% if module.heading %}
+        <h2>{{module.heading}}</h2>      
+    {% endif %}
+
+    {% filter shortcodes %}
+        [gravityform id={{module.form}} title=false description=false ajax=false]
+    {% endfilter %}
+
+</div>

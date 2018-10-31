@@ -1,10 +1,9 @@
 @import "bootstrap";
 
 .module { margin-bottom: 60px; }
-.module :last-child { margin-bottom: 0;}
+.module:last-child { margin-bottom: 0;}
 .blog .module, .single .module { margin-bottom: 40px; }
 .page-template-custom-sidebar .module { margin-bottom: 50px; }
-.module:last-child { margin-bottom: 0; }
 
 .row.without-hero { margin-top: 30px; }
 .sidebar-modules { margin-top: 40px; }
@@ -484,6 +483,7 @@ p, ol, ul {
 /* CLASSES */
 
 .button {
+    border: 0;
     color: #fff !important;
     display: inline-block;
     font-weight: bold;
@@ -491,11 +491,12 @@ p, ol, ul {
     padding: 10px 25px;
 }
 
-.button.button-primary:link, .button.button-primary:visited {
+.button.button-primary, .button.button-primary:link, .button.button-primary:visited {
     background-color: $pink;
 }
 .button.button-primary:active, .button.button-primary:hover {
     background-color: $dark_purple;
+    cursor: pointer;
 }
 
 .button.button-primary.top-nav-donate:active, .button.button-primary.top-nav-donate:hover {
@@ -605,3 +606,5 @@ p, ol, ul {
 @import "module-text-landing";
 @import "sidebar-module-cta";
 @import "sidebar-module-post-feed";
+
+@import "gf";
