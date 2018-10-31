@@ -2,10 +2,25 @@
 
 {% block content %}
 
-	{% for module in post.get_field('modules') %}
-	
-		{% include 'partial/module.twig' ignore missing %}
+	{% if post.content %}
 
-	{% endfor %}
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<h1>{{post.title}}</h1>
+						{{post.content}}
+				</div>
+			</div>
+		</div>
+
+	{% else %}
+
+		{% for module in post.get_field('modules') %}
+		
+			{% include 'partial/module.twig' ignore missing %}
+
+		{% endfor %}
+
+	{% endif %}
 
 {% endblock %}
