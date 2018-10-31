@@ -5,8 +5,10 @@
     {% set hero = post.get_field('hero') %}
     {% set image = TimberImage(hero.image) %}
     
-    {% if hero.image|length > 0 %}
-        
+    {% if image.src|length > 0 %}
+        <div class="module hero-landing">
+            <img alt="{{image.alt}}" class="hero-landing-image" src="{{image.src|resize(2048, 552, 'center')}}">
+        </div>
     {% endif %}
 
     <div class="container">
