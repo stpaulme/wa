@@ -6,9 +6,14 @@
 
     {% for module in post.get_field('modules') %}
 
-        {% if module.acf_fc_layout == 'hero' %}
 
-            {% set hero_class = 'with-hero' %}
+        {% if loop.index == 1 %}
+
+            {% if module.acf_fc_layout == 'hero' or module.acf_fc_layout == 'image_band' %}
+
+                {% set hero_class = 'with-hero' %}
+            
+            {% endif %}
 
         {% endif %}
 
