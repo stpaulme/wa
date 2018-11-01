@@ -16,6 +16,14 @@
     max-width: 100%;
 }
 
+.cta-text li {
+    margin-bottom: 0.3rem;
+}
+
+cta-text li:last-child {
+    margin-bottom: 0;
+}
+
 .cta-group .cta-text {
     background-color: #fff;
     border-color: $light-gray;
