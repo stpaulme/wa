@@ -2,6 +2,13 @@
     margin-bottom: 0;
 }
 
+.text-content li {
+    margin-bottom: 0.3rem;
+}
+.text-content li:last-child {
+    margin-bottom: 0;
+}
+
 .text-image {
     margin-bottom: 30px;
     max-width: 100%;
