@@ -33,10 +33,19 @@ $other_pages = Timber::get_posts( $other_page_args );
 
 $menu_items = array_merge( $parent_page, $other_pages );
 
+$depth = spm_get_current_page_depth();
+if ( $depth == 2 ) :
+    // Grandchild
+    $current = wp_get_post_parent_id( $queried_object->ID );
+else :
+    // Parent or child
+    $current = $queried_object->ID;
+endif;
+
 $context['post'] = $post;
 $context['template'] = 'sidebar';
 $context['menu_items'] = $menu_items;
-$context['current'] = $queried_object->ID;
+$context['current'] = $current;
 $context['title'] = $post->name;
 
 Timber::render( array( 'custom-sidebar.twig' ), $context );
