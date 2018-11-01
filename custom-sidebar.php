@@ -34,7 +34,10 @@ $other_pages = Timber::get_posts( $other_page_args );
 $menu_items = array_merge( $parent_page, $other_pages );
 
 $depth = spm_get_current_page_depth();
-if ( $depth == 2 ) :
+if ( $depth == 3 ) :
+    // Great grandchild
+    $current = wp_get_post_parent_id( wp_get_post_parent_id( $queried_object->ID ) );
+elseif ( $depth == 2 ) :
     // Grandchild
     $current = wp_get_post_parent_id( $queried_object->ID );
 else :
