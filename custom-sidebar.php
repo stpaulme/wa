@@ -7,15 +7,24 @@ $queried_object = get_queried_object();
 $context = Timber::get_context();
 $post = new TimberPost();
 
+if ( $post->post_parent ) {
+	$ancestors = get_post_ancestors($post->ID);
+	$root = count( $ancestors ) - 1;
+	$parent = $ancestors[$root];
+}
+else {
+    $parent = $post->ID;
+}
+
 $parent_page_args = array(
     'post_type'         => 'page',
-    'page_id'           => $post->post_parent,
+    'page_id'           => $parent,
 );
 $parent_page = Timber::get_posts( $parent_page_args );
 
 $other_page_args = array(
     'post_type'         => 'page',
-    'post_parent'       => $post->post_parent,
+    'post_parent'       => $parent,
     'posts_per_page'    => -1,
     'order'             => 'ASC',
     'orderby'           => 'menu_order'
