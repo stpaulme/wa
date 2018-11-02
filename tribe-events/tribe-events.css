@@ -15,7 +15,7 @@
 }
 
 #tribe-events-content.tribe-events-list .type-tribe_events {
-    margin-bottom: 60px;
+    margin-bottom: 40px;
 }
 
 .tribe-events-event-meta {
@@ -36,10 +36,6 @@
 }
 
 .tribe-events-list-event-description p {
-    margin-bottom: 0;
-}
-
-.tribe-events-single-event-description :last-child {
     margin-bottom: 0;
 }
 

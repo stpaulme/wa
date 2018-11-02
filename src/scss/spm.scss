@@ -588,6 +588,7 @@ p, ol, ul {
 .blog-pattern {
     background-image: url('../../img/pattern_blog.png');
     border-top: 6px solid $light-gray;
+    margin-top: 30px;
     padding: 40px 0;
 }
 
@@ -596,19 +597,19 @@ p, ol, ul {
     padding: 30px;
 }
 
-/* EVENTS */
-.events-pattern {
+.events-pattern, .search-pattern, .not-found-pattern {
     border-top: 6px solid $light-gray;
+    margin: 30px 0;
+    padding-top: 40px;
 }
 
-/* SEARCH */
-.search-pattern {
-    border-top: 6px solid $light-gray;
-}
-
-/* 404 */
-.not-found-pattern {
-    border-top: 6px solid $light-gray;
+@media (min-width: 768px) {
+    .events-pattern, .search-pattern, .not-found-pattern {
+        margin: 50px 0;
+    }
+    .blog-pattern {
+        margin-top: 50px;
+    }
 }
 
 @import "module-cta-group";
