@@ -5,47 +5,45 @@
     {% if post_type == 'event' %}
         {% set category = module.event_category %}
     {% else %}
-        {% set category = TimberTerm(module.post_category) %}
-        {% set args = {
-            'numberposts' : module.max,
-            'order' : 'DESC',
-        } %}
-        {% set items = category.get_posts(args) %} 
+        {% if module.show_all_categories == true %}
+            {% set items = blog_posts|slice(0, module.max) %}
+        {% else %}
+            {% set category = TimberTerm(module.post_category) %}
+            {% set args = {
+                'numberposts' : module.max,
+                'order' : 'DESC',
+            } %}
+            {% set items = category.get_posts(args) %}
+        {% endif %}
     {% endif %}
 
     {% set events %}
-
         {% filter shortcodes %}
-
             [ecs-list-events limit='{{module.max}}' excerpt='20' viewall='false' contentorder='date, title, excerpt']
-
         {% endfilter %}
-
     {% endset %}
 
     {% set blog_posts %}
         <div class="row">
+            {% for item in items %}
+                <div class="col-lg-4 feed-post">
+                    <div class="feed-post-content">
+                        <div class="feed-post-meta">
+                            <p class="feed-post-date">{{item.date|date("l, F j")}}</p>
 
-        {% for item in items %}
-            <div class="col-lg-4 feed-post">
-                <div class="feed-post-content">
-                    <div class="feed-post-meta">
-                        <p class="feed-post-date">{{item.date|date("l, F j")}}</p>
+                            <ul class="feed-post-categories">
+                            {% for term in item.terms('category') %}
+                                <li class="feed-post-category"><a href="{{function('get_category_link', term.id)}}">{{term.name}}</a></li>
+                            {% endfor %}
+                            </ul>
+                        </div>
 
-                        <ul class="feed-post-categories">
-                        {% for term in item.terms('category') %}
-                            <li class="feed-post-category"><a href="{{function('get_category_link', term.id)}}">{{term.name}}</a></li>
-                        {% endfor %}
-                        </ul>
+                        <h3 class="feed-post-title"><a href="{{item.link}}">{{item.name}}</a></h3>
+
+                        <p class="feed-post-excerpt">{{item.preview.length(20).read_more('Read More')}}</p>
                     </div>
-
-                    <h3 class="feed-post-title"><a href="{{item.link}}">{{item.name}}</a></h3>
-
-                    <p class="feed-post-excerpt">{{item.preview.length(20).read_more('Read More')}}</p>
                 </div>
-            </div>
-        {% endfor %}
-
+            {% endfor %}
         </div>
     {% endset %}
     

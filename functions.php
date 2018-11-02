@@ -115,6 +115,16 @@ class StarterSite extends TimberSite {
 		$context['footer'] = new TimberMenu( 'footer' );
 		$context['options'] = get_fields('option');
 		$context['site'] = $this;
+
+		$args = array(
+			'post_type' => 'post',
+			'posts_per_page' => 10,
+			'orderby' => array(
+				'date' => 'DESC'
+			)
+		);
+		$context['blog_posts'] = Timber::get_posts( $args );
+
 		return $context;
 	}
 

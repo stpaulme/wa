@@ -10,7 +10,7 @@
         {% endif %}
 
         
-        <div class="row">
+        <div class="row {{module.heading ? 'with-heading' : 'without-heading'}}">
 
             {% for cta in module.cta_group %}
 

@@ -7,12 +7,16 @@
     {% if post_type == 'event' %}
         {% set category = module.event_category %}
     {% else %}
-        {% set category = TimberTerm(module.post_category) %}
-        {% set args = {
-            'numberposts' : module.max,
-            'order' : 'DESC',
-        } %}
-        {% set items = category.get_posts(args) %} 
+        {% if module.show_all_categories == true %}
+            {% set items = blog_posts|slice(0, module.max) %}
+        {% else %}
+            {% set category = TimberTerm(module.post_category) %}
+            {% set args = {
+                'numberposts' : module.max,
+                'order' : 'DESC',
+            } %}
+            {% set items = category.get_posts(args) %}
+        {% endif %}
     {% endif %}
 
     {% set events %}
