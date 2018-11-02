@@ -1,5 +1,30 @@
 <?php
 
+function spm_get_breadcrumbs( $post, $displayCurrent ) {
+	$count = 1;
+	$postAncestors = get_post_ancestors( $post );
+	$sortedAncestorArray = array();
+	
+	foreach ( $postAncestors as $ancestor ) {
+		$sortedAncestorArray[] = $ancestor;
+	}
+	krsort( $sortedAncestorArray ); // Sort an array by key in reverse order
+	
+	echo "<ul class='breadcrumbs'>";
+
+	foreach ( $sortedAncestorArray as $ancestor ) {
+		echo "<li class='breadcrumb'><a class='breadcrumb-link-". $count ."' href='". esc_url(get_permalink($ancestor)) ."' title='". get_the_title($ancestor) ."'>". get_the_title($ancestor) ."</a></li>";
+		$count++;
+	}
+
+	if( $displayCurrent ) {
+		echo "<li class='breadcrumb'>". get_the_title($post) ."</li>";
+	}
+
+	echo "</ul>";
+}
+
+
 function spm_get_current_page_depth(){
     global $wp_query;
      

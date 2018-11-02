@@ -612,6 +612,31 @@ p, ol, ul {
     }
 }
 
+.breadcrumbs {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    list-style: inline;
+    padding-left: 0;
+    margin-bottom: 20px;
+}
+
+.breadcrumb {
+    display: inline;
+}
+
+.breadcrumb:after {
+    color: $light-gray;
+    content: '  /  ';
+}
+
+.breadcrumb:last-child:after {
+    content: '';
+}
+
+@media (min-width: 768px) {
+    margin-bottom: 30px;
+}
+
 @import "module-cta-group";
 @import "module-embed";
 @import "module-hero";

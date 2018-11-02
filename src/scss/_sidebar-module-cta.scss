@@ -19,3 +19,23 @@
 .sidebar-module.cta .cta-text.without-image {
     border-width: 1px;
 }
+
+.sidebar-cta-heading a {
+    color: inherit;
+}
+
+.sidebar-links {
+    list-style: none;
+    padding-left: 0;
+}
+
+li.sidebar-link {
+    margin-bottom: 1rem;
+}
+
+li.sidebar-link a {
+    background-image: url('../../img/sidebar_arrow.svg');
+    background-position: left center;
+    background-repeat: no-repeat;
+    padding-left: 15px;
+}

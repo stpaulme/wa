@@ -45,10 +45,25 @@ else :
     $current = $queried_object->ID;
 endif;
 
+$other_grandchildren_args = array(
+    'post_type'         => 'page',
+    'post_parent'       => $current,
+    'posts_per_page'    => -1,
+    'order'             => 'ASC',
+    'orderby'           => 'menu_order'
+);
+
+$other_grandchildren = Timber::get_posts( $other_grandchildren_args );
+
+$immediate_parent = Timber::get_post( $current );
+
 $context['post'] = $post;
 $context['template'] = 'sidebar';
 $context['menu_items'] = $menu_items;
 $context['current'] = $current;
 $context['title'] = $post->name;
+$context['depth'] = $depth;
+$context['immediate_parent'] = $immediate_parent;
+$context['other_grandchildren'] = $other_grandchildren;
 
 Timber::render( array( 'custom-sidebar.twig' ), $context );
