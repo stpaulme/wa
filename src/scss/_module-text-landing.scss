@@ -14,7 +14,7 @@
     max-width: 100%;
 }
 
-.text-heading {
+.text-heading, .text-content h2 {
     @include border-bottom-salmon-partial;
 }
 
