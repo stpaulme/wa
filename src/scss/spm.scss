@@ -1,17 +1,14 @@
 @import "bootstrap";
 
-.module { margin-bottom: 60px; }
-.module:last-child { margin-bottom: 0;}
-.blog .module, .single .module { margin-bottom: 40px; }
-.page-template-custom-sidebar .module { margin-bottom: 50px; }
+//.without-hero { margin-top: 30px; }
 
-.without-hero { margin-top: 30px; }
 .sidebar-modules { margin-top: 40px; }
-.sidebar-module { margin-bottom: 30px; }
-.sidebar-module:last-child { margin-bottom: 0; }
+    .sidebar-module { margin-bottom: 30px; }
+    .sidebar-module:last-child { margin-bottom: 0; }
 
 @media (min-width: 768px) {
-    .without-hero { margin-top: 50px; }
+    //.without-hero { margin-top: 50px; }
+
     .sidebar-modules { margin-top: 0; }
 }
 
@@ -22,7 +19,6 @@
 .footer {
     background-color: $dark_purple;
     color: $light-gray !important;
-    margin-top: 60px;
 }
 
 .footer-primary {
