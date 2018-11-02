@@ -184,12 +184,12 @@
                 "5b7f12eb6ad19": {
                     "key": "5b7f12eb6ad19",
                     "name": "cta",
-                    "label": "CTA - General",
+                    "label": "CTA",
                     "display": "block",
                     "sub_fields": [
                         {
                             "key": "field_5b83faa83f12e",
-                            "label": "CTA - General",
+                            "label": "CTA",
                             "name": "cta",
                             "type": "clone",
                             "instructions": "",
@@ -202,37 +202,6 @@
                             },
                             "clone": [
                                 "group_5b83f8c578b20"
-                            ],
-                            "display": "seamless",
-                            "layout": "block",
-                            "prefix_label": 0,
-                            "prefix_name": 0
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
-                },
-                "layout_5bbd2bf7260ef": {
-                    "key": "layout_5bbd2bf7260ef",
-                    "name": "cta_contact",
-                    "label": "CTA - Contact",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_5bbd2c28260f0",
-                            "label": "CTA - Contact",
-                            "name": "cta_contact",
-                            "type": "clone",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "clone": [
-                                "group_5bbd2b1851acb"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -299,5 +268,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1541002618
+    "modified": 1541167820
 }
