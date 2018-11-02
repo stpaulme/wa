@@ -137,15 +137,16 @@
         margin-bottom: 30px;
     }
 }
-@media (min-width: 992px) {
-    .post-feed .ecs-event {
-        margin-bottom: 0;
-        flex-basis: 0;
-        flex-grow: 1;
-        margin-right: 30px;
-    }
 
-    .post-feed .ecs-event:nth-child(3n+3) {
-        margin-right: 0;
+@media (min-width: 992px) {
+    .post-feed .ecs-event-list {
+        margin-right: -15px;
+        margin-left: -15px;
+    }
+    .post-feed .ecs-event {
+        margin-right: 15px;
+        margin-left: 15px;
+        max-width: calc(50% - 30px);
+        flex: 0 0 50%;
     }
 }
