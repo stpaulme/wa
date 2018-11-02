@@ -6,6 +6,10 @@
     background: url('../../img/pattern.png');
 }
 
+.background-white + .background-white {
+    padding-top: 0 !important;
+}
+
 .cta-group .cta {
     margin-bottom: 20px;
 }
