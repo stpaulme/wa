@@ -6,6 +6,10 @@
     .sidebar-module { margin-bottom: 30px; }
     .sidebar-module:last-child { margin-bottom: 0; }
 
+.single {
+    margin-bottom: 40px;
+}
+
 @media (min-width: 768px) {
     .page-template-custom-sidebar .without-hero { margin-top: 50px; }
 
