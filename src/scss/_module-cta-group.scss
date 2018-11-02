@@ -26,7 +26,7 @@
     margin-bottom: 0.3rem;
 }
 
-cta-text li:last-child {
+.cta-text li:last-child {
     margin-bottom: 0;
 }
 
@@ -73,6 +73,14 @@ cta-text li:last-child {
 }
 
 @media (min-width: 992px) {
+    .cta-group-container {
+        margin-bottom: -40px;
+    }
+
+    .cta-group .cta:last-child {
+        margin-bottom: 40px;
+    }
+
     .cta-group .cta-text.with-image {
         border-width: 0 1px 1px 1px;
         padding: 25px 20px;
