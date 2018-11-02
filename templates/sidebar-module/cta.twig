@@ -4,7 +4,7 @@
         <img src="{{TimberImage(module.image).src|resize(540,300)}}" alt="{{TimberImage(module.image).alt}}" class="sidebar-cta-image">
     {% endif %}
 
-    <div class="cta-text {{module.image ? 'with-image' : 'without-image'}}">
+    <div class="cta-text {{module.image ? 'with-image' : 'without-image'}} {{module.link.url|length > 0 ? 'with-link' : 'without-link'}}">
     
         {% if module.heading %}
             <h3 class="sidebar-cta-heading">{{module.heading}}</h3>

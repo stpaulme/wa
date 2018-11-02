@@ -30,7 +30,7 @@
 
                         <div class="col-md col-lg-12">
 
-                            <div class="cta-text {{cta.image ? 'with-image' : 'without-image'}}">
+                            <div class="cta-text {{cta.image ? 'with-image' : 'without-image'}} {{cta.link.url|length > 0 ? 'with-link' : 'without-link'}}">
 
                                 {% if cta.heading %}
                                     <h3 class="cta-heading">{{cta.heading}}</h3>
