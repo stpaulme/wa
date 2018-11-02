@@ -1,13 +1,13 @@
 @import "bootstrap";
 
-//.without-hero { margin-top: 30px; }
+.page-template-custom-sidebar .without-hero { margin-top: 30px; }
 
 .sidebar-modules { margin-top: 40px; }
     .sidebar-module { margin-bottom: 30px; }
     .sidebar-module:last-child { margin-bottom: 0; }
 
 @media (min-width: 768px) {
-    //.without-hero { margin-top: 50px; }
+    .page-template-custom-sidebar .without-hero { margin-top: 50px; }
 
     .sidebar-modules { margin-top: 0; }
 }
