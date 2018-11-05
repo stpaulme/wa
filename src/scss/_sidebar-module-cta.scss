@@ -6,6 +6,10 @@
     @include border-bottom-salmon-full;
 }
 
+.sidebar-module.cta {
+    background-color: $white;
+}
+
 .sidebar-module.cta .cta-text {
     border-color: $light-gray;
     border-style: solid;
