@@ -593,7 +593,6 @@ p, ol, ul {
 .blog-pattern {
     background-image: url('../../img/pattern_blog.png');
     border-top: 6px solid $light-gray;
-    margin-top: 30px;
     padding: 40px 0;
 }
 
@@ -611,9 +610,6 @@ p, ol, ul {
 @media (min-width: 768px) {
     .events-pattern, .search-pattern, .not-found-pattern {
         margin: 50px 0;
-    }
-    .blog-pattern {
-        margin-top: 50px;
     }
 }
 
