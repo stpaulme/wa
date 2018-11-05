@@ -27,14 +27,9 @@
                 {% endfor %}
             </div>
 
-            {% if post.get_field('sidebar_modules') %}
+            
                 <div class="col-md-4 offset-md-1 sidebar-modules">
                     
-
-
-
-
-
                     {% if other_grandchildren %}
 
                         <div class="sidebar-module cta">
@@ -49,17 +44,19 @@
                             </div>
                         </div>
 
-                       
-                        
-
                     {% endif %}
 
-                    {% for module in post.get_field('sidebar_modules') %}
-                        {% set layout = module.acf_fc_layout %}
-                        {% include 'sidebar-module/'~layout~'.twig' %}
-                    {% endfor %}
+                    {% if post.get_field('sidebar_modules') %}
+
+                        {% for module in post.get_field('sidebar_modules') %}
+                            {% set layout = module.acf_fc_layout %}
+                            {% include 'sidebar-module/'~layout~'.twig' %}
+                        {% endfor %}
+
+                    {% endif %}
+                    
                 </div>
-            {% endif %}
+            
         </div>
     </div>
 
