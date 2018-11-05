@@ -564,6 +564,11 @@ p, ol, ul {
     margin-top: 0;
 }
 
+.article-body img {
+    height: auto;
+    max-width: 100%;
+}
+
 .date {
     display: inline-block;
     border-bottom: 1px solid $light_gray;
