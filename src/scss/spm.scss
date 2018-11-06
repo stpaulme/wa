@@ -107,10 +107,12 @@
     position: fixed;
     right: 0;
     bottom: 0;
+    display: none;
     text-align: center;
     width: 100%;
     z-index: 100;
-    display: none;
+    @extend .button;
+    @extend .button-emergency;
 }
 
 @media (min-width: 768px) {
