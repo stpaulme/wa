@@ -149,4 +149,7 @@
         max-width: calc(50% - 30px);
         flex: 0 0 50%;
     }
+    .post-feed .ecs-event:nth-last-child(-n+2) {
+        margin-bottom: 0 !important;
+    }
 }

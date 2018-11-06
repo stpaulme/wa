@@ -608,6 +608,12 @@ p, ol, ul {
 }
 
 @media (min-width: 768px) {
+    .blog-pattern {
+        background-image: url('../../img/pattern_blog.png');
+        border-top: 6px solid $light-gray;
+        padding: 40px 0;
+    }
+    
     .events-pattern, .search-pattern, .not-found-pattern {
         margin: 0;
     }
