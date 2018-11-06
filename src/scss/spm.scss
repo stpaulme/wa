@@ -491,6 +491,9 @@ p, ol, ul {
         font-weight: 500;
         margin-right: 30px;
     }
+    .sibling-menu-item:first-child {
+        text-transform: uppercase;
+    }
     .sibling-menu-item:last-child {
         margin-right: 0;
     }
