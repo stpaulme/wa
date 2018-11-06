@@ -604,7 +604,7 @@ p, ol, ul {
 .events-pattern, .search-pattern, .not-found-pattern {
     border-top: 6px solid $light-gray;
     margin: 0;
-    padding-top: 40px;
+    padding: 40px 0;
 }
 
 @media (min-width: 768px) {
