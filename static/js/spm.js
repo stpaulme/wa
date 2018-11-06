@@ -21,7 +21,7 @@ jQuery(document).ready(function() {
     
     });
 
-    var offset = 80;
+    var offset = 250;
     
     jQuery(window).scroll(function() {
         
