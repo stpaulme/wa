@@ -4,7 +4,8 @@
 
         <ul class="sidebar-links">
             {% for item in categories %}
-                <li class="sidebar-link"><a href="{{item.link}}">{{item.name}}</a></li>
+                {% set category_link = function('get_category_link', item.term_id) %}
+                <li class="sidebar-link"><a href="{{category_link}}">{{item.name}}</a></li>
             {% endfor %}
         </ul>
     </div>
