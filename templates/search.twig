@@ -20,7 +20,7 @@
                                     {% set module_preview = module_preview ~ module.copy %}
                                 {% endfor %}
                                 
-                            {{module_preview|length > 150 ? module_preview|slice(0, 150) ~ '...'}}
+                            {{module_preview|length > 250 ? module_preview|slice(0, 250) ~ '...'}}
                         {% endif %}
                     </div>
 			    {% endfor %}
