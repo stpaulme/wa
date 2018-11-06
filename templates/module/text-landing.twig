@@ -15,6 +15,10 @@
                     {% if module.copy %}
                         {{module.copy}}
                     {% endif %}
+
+                    {% if module.link %}
+                         <a class="button button-primary" href="{{module.link.url}}" target="{{module.link.target}}">{{module.link.title}}</a>
+                    {% endif %}
                 </div>
             </div>
         </div>
