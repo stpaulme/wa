@@ -8,6 +8,8 @@ jQuery(document).ready(function() {
     }
 
     jQuery(function() {
+
+        jQuery(".exit").hide();
         
         jQuery(".exit").on("click", function(e) {
             getAway();
