@@ -130,7 +130,6 @@ class StarterSite extends TimberSite {
 		wp_enqueue_style( 'cabin', '//fonts.googleapis.com/css?family=Cabin:400,400i,600,600i,700' );
 		wp_enqueue_style( 'font-awesome', '//use.fontawesome.com/releases/v5.3.1/css/all.css' );
 
-		wp_enqueue_script( 'popper', get_template_directory_uri() . '/static/js/popper.min.js' );
 		wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/static/js/bootstrap.min.js', array( 'jquery' ) );
     }
 
