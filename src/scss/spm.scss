@@ -103,9 +103,14 @@
     max-width: 75px;
 }
 
-.footer-secondary .button {
+.exit {
+    position: fixed;
+    right: 0;
+    bottom: 0;
     text-align: center;
     width: 100%;
+    z-index: 100;
+    display: none;
 }
 
 @media (min-width: 768px) {
@@ -613,7 +618,7 @@ p, ol, ul {
         border-top: 6px solid $light-gray;
         padding: 40px 0;
     }
-    
+
     .events-pattern, .search-pattern, .not-found-pattern {
         margin: 0;
     }
