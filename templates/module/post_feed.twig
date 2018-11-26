@@ -1,50 +1,63 @@
-<div class="module post-feed">
+{% set post_type = module.post_type %}
 
-    {% set category = TimberTerm(module.category) %}
+<div class="module post-feed post-type-{{post_type}}">
 
-    {% set args = {
-        'numberposts' : module.max,
-    } %}
-
-    {% if module.post_type == 'Event' %}
-        {% set args = args|merge({
-            'meta_key' : '_EventStartDate',
-            'orderby' : 'meta_value',
-            'order' : 'ASC',
-        }) %}
+    {% if post_type == 'event' %}
+        {% set category = module.event_category %}
     {% else %}
-        {% set args = args|merge({
-            'order' : 'DESC',
-        }) %}
+        {% if module.show_all_categories == true %}
+            {% set items = blog_posts|slice(0, module.max) %}
+        {% else %}
+            {% set category = TimberTerm(module.post_category) %}
+            {% set args = {
+                'numberposts' : module.max,
+                'order' : 'DESC',
+            } %}
+            {% set items = category.get_posts(args) %}
+        {% endif %}
     {% endif %}
+
+    {% set events %}
+        {% filter shortcodes %}
+            [ecs-list-events limit='{{module.max}}' excerpt='true' viewall='false' contentorder='date, title, excerpt']
+        {% endfilter %}
+    {% endset %}
+
+    {% set blog_posts %}
+        <div class="row">
+            {% for item in items %}
+                <div class="col-lg-4 feed-post">
+                    <div class="feed-post-content">
+                        <div class="feed-post-meta">
+                            <p class="feed-post-date">{{item.date|date("l, F j")}}</p>
+
+                            <ul class="feed-post-categories">
+                            {% for term in item.terms('category') %}
+                                <li class="feed-post-category"><a href="{{function('get_category_link', term.id)}}">{{term.name}}</a></li>
+                            {% endfor %}
+                            </ul>
+                        </div>
+
+                        <h3 class="feed-post-title"><a href="{{item.link}}">{{item.name}}</a></h3>
+
+                        <p class="feed-post-excerpt">{{item.preview.length(20).read_more('Read More')}}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endset %}
     
     <div class="container">
 
-    {% if module.heading %}
-    <div class="row">
-        <div class="col">
-            <h2>{{module.heading}}</h2>
-        </div>
-    </div>
-    {% endif %}
-
-    <div class="row">
-    
-        {% for item in category.get_posts(args) %}
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-header">
-                    {{module.post_type == 'Event' ? item._EventStartDate|date("F d, Y") : item.date}}
-                </div>
-                <div class="card-body">
-                    <h3 class="card-title"><a href="{{item.link}}">{{item.name}}</a></h3>
-                    <p class="card-text">{{item.preview.length(20).read_more('')}}</a></p>
-                    <a class="btn btn-secondary" href="{{item.link}}">Read More</a>
+        {% if module.heading %}
+            <div class="row">
+                <div class="col">
+                    <h2>{{module.heading}}</h2>
                 </div>
             </div>
-        </div>
-        {% endfor %}
-    
+        {% endif %}
+
+        {{post_type == 'event' ? events : blog_posts}}
+
     </div>
-</div>        
 </div>

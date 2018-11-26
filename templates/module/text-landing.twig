@@ -1,0 +1,26 @@
+<div class="module text background-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 col-lg-6 {{module.image_position == 'right' ? 'order-lg-last'}}">
+                {% if module.image %}
+                    <img src="{{TimberImage(module.image).src|resize(906,602)}}" alt="{{TimberImage(module.image).alt}}" class="text-image">
+                {% endif %}
+            </div>
+            <div class="col-md-12 col-lg-6 {{module.image_position == 'right' ? 'order-lg-first'}}">
+                <div class="text-content">
+                    {% if module.heading %}
+                        <h2 class="text-heading">{{module.heading}}</h2>
+                    {% endif %}
+                    
+                    {% if module.copy %}
+                        {{module.copy}}
+                    {% endif %}
+
+                    {% if module.link %}
+                         <a class="button button-primary" href="{{module.link.url}}" target="{{module.link.target}}">{{module.link.title}}</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

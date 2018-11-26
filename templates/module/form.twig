@@ -1,0 +1,19 @@
+{% if template == 'landing' %}
+    <div class="container background-white">
+{% endif %}
+
+<div class="module form">
+
+    {% if module.heading %}
+        <h2>{{module.heading}}</h2>      
+    {% endif %}
+
+    {% filter shortcodes %}
+        [gravityform id={{module.form}} title=false description=false ajax=false]
+    {% endfilter %}
+
+</div>
+
+{% if template == 'landing' %}
+    </div>
+{% endif %}

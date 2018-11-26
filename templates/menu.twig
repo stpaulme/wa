@@ -1,0 +1,27 @@
+{% if menu %}
+	<ul id="{{id}}" class="menu">
+		{% for item in menu %}
+			<li class="{{item.classes | join(' ')}}">
+				<a target="{{item.target}}" href="{{item.link}}">{{item.title}}</a>
+				
+					{% if show_children %}
+
+						{% if item.children %}
+
+							<ul class="menu-item-children">
+
+								{% for child in item.children %}
+									<li class="menu-item-child">
+										<a href="{{ child.link }}">{{ child.title }}</a>
+									</li>
+								{% endfor %}
+
+							</ul>
+
+						{% endif %}
+
+					{% endif %}
+			</li>
+		{% endfor %}
+	</ul>
+{% endif %}

@@ -1,0 +1,105 @@
+<div class="row footer-primary" style="background-image: url({{TimberImage(options.footer_logo).src}});">
+
+    <div class="col-md-4 offset-md-5 offset-lg-2">
+
+        <img src="{{theme.link}}/img/wa_footerwordmark.svg" alt="{{site.name}}" class="wordmark-footer">
+
+        {% if options.location %}
+        <ul class="list-footer">
+            {% set google_map_url = options.location.google_map_url %}
+
+            <li class="list-footer-item">
+
+            {{google_map_url ? '<a href="'~google_map_url~'" target="_blank">' }}
+
+                {% if options.location.address_line_1 %}
+                    {{options.location.address_line_1}}<br>
+                {% endif %}
+
+                {% if options.location.address_line_2 %}
+                    {{options.location.address_line_2}}<br>
+                {% endif %}
+
+                {% if options.location.city %}
+                    {{options.location.city}},
+                {% endif %}
+
+                {% if options.location.state %}
+                    <abbr title="{{options.location.state.label}}">{{options.location.state.value}}</abbr>
+                {% endif %}
+
+                {% if options.location.zip %}
+                    {{options.location.zip}}
+                {% endif %}
+
+            {{options.location.google_map_url ? '</a>' }}
+
+            </li>
+        </ul>
+        {% endif %}
+
+        {% if options.phone or options.crisis_line %}
+        <ul class="list-footer">
+            {% if options.phone %}
+                <li class="list-footer-item">Admin: <a href="tel:{{options.phone}}">{{options.phone}}</a></li>
+            {% endif %}
+            
+            {% if options.crisis_line %}
+                <li class="list-footer-item">Crisis Line: <a href="tel:{{options.crisis_line}}">{{options.crisis_line}}</a></li>
+            {% endif %}
+        </ul>
+        {% endif %}
+
+        {% if options.social_media %}
+            <ul class="list-footer">
+
+                {% if options.social_media.facebook %}
+                    <li class="list-footer-item-inline">
+                        <a href="{{options.social_media.facebook}}" target="_blank" title="Facebook">
+                            <i class="soc soc-facebook"></i>
+                        </a>
+                    </li>
+                {% endif %}
+                
+                {% if options.social_media.twitter %}
+                    <li class="list-footer-item-inline">
+                        <a href="{{options.social_media.twitter}}" target="_blank" title="Twitter">
+                            <i class="soc soc-twitter"></i>
+                        </a>
+                    </li>
+                {% endif %}
+
+            </ul>
+        {% endif %}
+
+    </div>
+
+    <div class="col-md-6 offset-md-5 col-lg-4 offset-lg-0">
+        {% include 'menu.twig' with {'menu': footer.get_items, 'id': 'footer-menu', 'show_children': false} %}
+    </div>
+
+    <div class="col-md-6 offset-md-2">
+        {% if options.disclaimer %}
+            <p class="disclaimer">{{options.disclaimer}}</p>
+        {% endif %}
+    </div>
+
+    <div class="col-md-4">
+        {% if options.badges %}
+            <ul class="list-footer list-badges">
+                {% for badge in options.badges %}
+                    <li class="list-footer-item-inline">
+                        <a href="{{badge.url}}" title="{{badge.name}}" target="_blank">
+                            <img src="{{TimberImage(badge.image).src}}" alt="{{TimberImage(badge.image).alt}}">
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+
+    <div class="col-md-3 offset-md-9">
+        <p class="attribution"><a href="https://stpaulmedia.com/" target="_blank">Design by Saint Paul Media</a></p>
+    </div>
+
+</div>

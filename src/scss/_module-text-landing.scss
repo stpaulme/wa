@@ -1,0 +1,25 @@
+.page-template-custom-landing .text-content :last-child {
+    margin-bottom: 0;
+}
+
+.text-content li {
+    margin-bottom: 0.5rem;
+}
+.text-content li:last-child {
+    margin-bottom: 0;
+}
+
+.text-image {
+    margin-bottom: 30px;
+    max-width: 100%;
+}
+
+.text-heading, .text-content h2 {
+    @include border-bottom-salmon-partial;
+}
+
+@media (min-width: 992px) {
+    .text-image {
+        margin-bottom: 0;
+    }
+}

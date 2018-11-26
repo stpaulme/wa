@@ -1,11 +1,11 @@
 <div class="module image-band">
-    <div class="row no-gutters">
+    <div class="row no-gutters" style="text-align: center;">
 
         {% for image in module.image_band %}
-            <div class="col-md {{loop.index == 2 ? 'd-none d-md-block'}}">
-                <img src="{{TimberImage(image.image).src|resize(1000,500)}}" class="image-{{loop.index}} mw-100">
+            <div class="col-md image-band-image-{{loop.index}}">
+                <img src="{{TimberImage(image.image).src|resize(1024,400)}}" class="image-band-image">
             </div>
         {% endfor %}
 
-     </div>
+    </div>
 </div>

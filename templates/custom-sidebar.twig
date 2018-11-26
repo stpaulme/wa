@@ -1,21 +1,62 @@
 {% extends "base.twig" %}
 
 {% block content %}
+    {% set hero = post.get_field('hero') %}
+    {% set image = TimberImage(hero.image) %}
+    
+    {% if image.src|length > 0 %}
+        <div class="module hero-landing">
+            <img alt="{{image.alt}}" class="hero-landing-image" src="{{image.src|resize(2048, 400, 'center')}}">
+        </div>
+    {% endif %}
 
     <div class="container">
-        <div class="row">
-            <div class="col-md-7">
+        <div class="row {{hero.image|length > 0 ? 'with-hero' : 'without-hero'}}">
+        
+            <div class="col-md-7 modules">
+                {% if depth > 1 %}
+                    {{function('spm_get_breadcrumbs', post, true)}}
+                {% endif %}
+
+                {% if title %}
+					<h1 class="title">{{title}}</h1>
+				{% endif %}
+
                 {% for module in post.get_field('modules') %}
                     {% include 'partial/module.twig' %}
                 {% endfor %}
             </div>
 
-            <div class="col-md-4 offset-md-1">
-                {% for module in post.get_field('sidebar_modules') %}
-                    {% set layout = module.acf_fc_layout %}
-                    {% include 'sidebar-module/'~layout~'.twig' %}
-                {% endfor %}
-            </div>
+            
+                <div class="col-md-4 offset-md-1 sidebar-modules">
+                    
+                    {% if other_grandchildren %}
+
+                        <div class="sidebar-module cta">
+                            <div class="cta-text without-image without-link">
+                                <h3 class="sidebar-cta-heading"><a href="{{immediate_parent.link}}">{{immediate_parent.title}}</a></h3>
+
+                                <ul class="sidebar-links">
+                                    {% for item in other_grandchildren %}
+                                        <li class="sidebar-link"><a href="{{item.link}}">{{item.name}}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+
+                    {% endif %}
+
+                    {% if post.get_field('sidebar_modules') %}
+
+                        {% for module in post.get_field('sidebar_modules') %}
+                            {% set layout = module.acf_fc_layout %}
+                            {% include 'sidebar-module/'~layout~'.twig' %}
+                        {% endfor %}
+
+                    {% endif %}
+                    
+                </div>
+            
         </div>
     </div>
 

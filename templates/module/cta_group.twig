@@ -1,4 +1,4 @@
-<div class="module cta-group">
+<div class="module cta-group {{module.background_pattern == true ? 'background-pattern' : 'background-white'}}">
     <div class="container">
 
         {% if module.heading %}
@@ -10,29 +10,48 @@
         {% endif %}
 
         
-        <div class="row">
+        <div class="row {{module.heading ? 'with-heading' : 'without-heading'}} cta-group-container">
+
             {% for cta in module.cta_group %}
-            <div class="col-md-4">
-                <div class="card">
-                    {% if cta.image %}
-                    <img src="{{TimberImage(cta.image).src|resize(540,300)}}" class="card-image-top mw-100">
-                    {% endif %}
 
-                    <div class="card-body">
-                        {% if cta.heading %}
-                        <h3 class="card-title">{{cta.heading}}</h3>
+                <div class="col-lg-4 cta">
+                    
+                    <div class="row">
+
+                        {% if cta.image %}
+                        <div class="col-md-6 col-lg-12">
+
+                            
+                                <img src="{{TimberImage(cta.image).src|resize(640,426)}}" class="cta-image">
+                            
+
+                        </div>
                         {% endif %}
 
-                        {% if cta.copy %}
-                        <p class="card-text">{{cta.copy}}</p>
-                        {% endif %}
+                        <div class="col-md col-lg-12">
 
-                        {% if cta.link %}
-                        <a class="btn btn-secondary" href="{{cta.link.url}}" target="{{cta.link.target}}">{{cta.link.title}}</a>
-                        {% endif %}
+                            <div class="cta-text {{cta.image ? 'with-image' : 'without-image'}} {{cta.link.url|length > 0 ? 'with-link' : 'without-link'}}">
+
+                                {% if cta.heading %}
+                                    <h3 class="cta-heading">{{cta.heading}}</h3>
+                                {% endif %}
+
+                                {% if cta.copy %}
+                                    {{cta.copy}}
+                                {% endif %}
+
+                                {% if cta.link %}
+                                    <a class="button button-primary" href="{{cta.link.url}}" target="{{cta.link.target}}">{{cta.link.title}}</a>
+                                {% endif %}
+                                
+                            </div>
+
+                        </div>
+
                     </div>
+
                 </div>
-            </div>
+            
             {% endfor %}
 
         </div>

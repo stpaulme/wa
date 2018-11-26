@@ -1,13 +1,15 @@
-<div class="row module">
+<div class="row module pagination">
+    {% if posts.pagination.next %}
+        <div class="col next">
+            <a href="{{posts.pagination.next.link}}" class="{{posts.pagination.next.link|length ? '' : 'invisible'}}"><i class="fas fa-chevron-left"></i> Older</a>
+        </div>
+    {% endif %}
+
     {% if posts.pagination.prev %}
-    <div class="col-md">
-        <a href="{{posts.pagination.prev.link}}" class="prev {{posts.pagination.prev.link|length ? '' : 'invisible'}}">&larr; Previous Page</a>
+    <div class="col prev">
+        <a href="{{posts.pagination.prev.link}}" class="{{posts.pagination.prev.link|length ? '' : 'invisible'}}">Newer <i class="fas fa-chevron-right"></i></a>
     </div>
     {% endif %}
 
-    {% if posts.pagination.next %}
-    <div class="col-md text-right">
-        <a href="{{posts.pagination.next.link}}" class="next {{posts.pagination.next.link|length ? '' : 'invisible'}}">Next Page &rarr;</a>
-    </div>
-    {% endif %}
+    
 </div>

@@ -1,0 +1,45 @@
+.sidebar-cta-image {
+    max-width: 100%;
+}
+
+.sidebar-cta-heading {
+    @include border-bottom-salmon-full;
+}
+
+.sidebar-module.cta {
+    background-color: $white;
+}
+
+.sidebar-module.cta .cta-text {
+    border-color: $light-gray;
+    border-style: solid;
+    padding: 25px 20px;
+}
+
+.sidebar-module.cta .cta-text.with-image {
+    border-width: 0 1px 1px 1px;
+}
+
+.sidebar-module.cta .cta-text.without-image {
+    border-width: 1px;
+}
+
+.sidebar-cta-heading a {
+    color: inherit;
+}
+
+.sidebar-links {
+    list-style: none;
+    padding-left: 0;
+}
+
+li.sidebar-link {
+    margin-bottom: 1rem;
+}
+
+li.sidebar-link a {
+    background-image: url('../../img/sidebar_arrow.svg');
+    background-position: left center;
+    background-repeat: no-repeat;
+    padding-left: 15px;
+}

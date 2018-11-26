@@ -1,0 +1,33 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    <div class="search-pattern">
+    <div class="container">
+        <div class="row without-hero">
+            <div class="col-md-7">
+                <h1 class="title">{{title}}</h1>
+
+                {% for post in posts %}
+                    <div class="module">
+                        <h3><a href="{{post.link}}">{{post.name}}</a></h3>
+                        {% if post.preview|length > 0 %}
+                            <p>{{post.preview.read_more('')}}</p>
+                        {% else %}
+                            {% set modules = post.get_field('modules') %}
+                            {% set module_preview = '' %}
+
+                                {% for module in modules if module.acf_fc_layout == 'text' %}
+                                    {% set module_preview = module_preview ~ module.copy %}
+                                {% endfor %}
+                                
+                            {{module_preview|length > 250 ? module_preview|slice(0, 250) ~ '...'}}
+                        {% endif %}
+                    </div>
+			    {% endfor %}
+
+                {% include 'partial/pagination.twig' %}
+            </div>
+        </div>
+    </div>
+    </div>
+{% endblock %}

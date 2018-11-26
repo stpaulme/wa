@@ -2,10 +2,31 @@
 
 {% block content %}
 
+    {% set hero_class = 'without-hero' %}
+
     {% for module in post.get_field('modules') %}
 
-        {% include 'partial/module.twig' %}
-        
+
+        {% if loop.index == 1 %}
+
+            {% if module.acf_fc_layout == 'hero' or module.acf_fc_layout == 'image_band' %}
+
+                {% set hero_class = 'with-hero' %}
+            
+            {% endif %}
+
+        {% endif %}
+
     {% endfor %}
+
+    <div class="{{hero_class}}">
+
+        {% for module in post.get_field('modules') %}
+
+            {% include 'partial/module.twig' %}
+
+        {% endfor %}
+    
+    </div>
 
 {% endblock %}

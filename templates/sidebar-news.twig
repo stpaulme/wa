@@ -1,11 +1,12 @@
-<div class="card module">
-    <div class="card-header">
-        <h6 class="mb-0">Categories</h6>
-    </div>
+<div class="sidebar-module cta">
+    <div class="cta-text without-image without-link">
+        <h3 class="sidebar-cta-heading">News Categories</h3>
 
-    <ul class="list-group list-group-flush">
-        {% for category in categories %}
-        <li class="list-group-item"><a href="{{category.link}}">{{category.name}}</a></li>
-        {% endfor %}
-    </ul>
+        <ul class="sidebar-links">
+            {% for item in categories %}
+                {% set category_link = function('get_category_link', item.term_id) %}
+                <li class="sidebar-link"><a href="{{category_link}}">{{item.name}}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
 </div>

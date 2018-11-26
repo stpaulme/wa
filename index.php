@@ -16,6 +16,8 @@
 $context = Timber::get_context();
 $context['title'] = 'News';
 $context['posts'] = new Timber\PostQuery();
+$context['sidebar'] = Timber::get_sidebar('sidebar-news.php');
+
 
 $templates = array( 'index.twig' );
 

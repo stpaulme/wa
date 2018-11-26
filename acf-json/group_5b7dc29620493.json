@@ -49,14 +49,14 @@
                 },
                 "layout_5b83fbf12d07d": {
                     "key": "layout_5b83fbf12d07d",
-                    "name": "cta",
-                    "label": "CTA",
+                    "name": "overview",
+                    "label": "Overview",
                     "display": "block",
                     "sub_fields": [
                         {
                             "key": "field_5b83fbfc2d07e",
-                            "label": "CTA",
-                            "name": "cta",
+                            "label": "Overview",
+                            "name": "overview",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -67,38 +67,7 @@
                                 "id": ""
                             },
                             "clone": [
-                                "group_5b83f8c578b20"
-                            ],
-                            "display": "seamless",
-                            "layout": "block",
-                            "prefix_label": 0,
-                            "prefix_name": 0
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
-                },
-                "layout_5b7f5f1a0b996": {
-                    "key": "layout_5b7f5f1a0b996",
-                    "name": "cta_pair",
-                    "label": "CTA Pair",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_5b7f5f310b997",
-                            "label": "CTA Pair",
-                            "name": "cta_pair",
-                            "type": "clone",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "clone": [
-                                "group_5b7c757980b52"
+                                "group_5bbba89432883"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -174,7 +143,7 @@
                 "layout_5b7eeb63fe1ae": {
                     "key": "layout_5b7eeb63fe1ae",
                     "name": "text",
-                    "label": "Text",
+                    "label": "Text with Image",
                     "display": "block",
                     "sub_fields": [
                         {
@@ -202,16 +171,16 @@
                     "min": "",
                     "max": ""
                 },
-                "layout_5b847073886c1": {
-                    "key": "layout_5b847073886c1",
-                    "name": "post_feed",
-                    "label": "Post Feed",
+                "layout_5bd9c443afd8e": {
+                    "key": "layout_5bd9c443afd8e",
+                    "name": "form",
+                    "label": "Form",
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5b847079886c2",
-                            "label": "Post Feed",
-                            "name": "post_feed",
+                            "key": "field_5bd9c447afd8f",
+                            "label": "Form",
+                            "name": "form",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -222,7 +191,7 @@
                                 "id": ""
                             },
                             "clone": [
-                                "group_5b844bd9e9304"
+                                "group_5bd8c20e6d0fd"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -258,5 +227,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1536249146
+    "modified": 1540998247
 }

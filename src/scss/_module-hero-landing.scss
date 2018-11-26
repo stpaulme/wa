@@ -1,0 +1,23 @@
+.hero-landing {
+    //margin-bottom: 30px;
+}
+
+.hero-landing-image {
+    max-width: 100%;
+}
+
+@media (min-width: 768px) {
+    .hero-landing {
+        //margin-bottom: 50px;
+    }
+}
+
+.page-template-custom-sidebar .hero-landing {
+    margin-bottom: 30px;
+}
+
+@media (min-width: 768px) {
+    .page-template-custom-sidebar .hero-landing {
+        margin-bottom: 50px;
+    }
+}

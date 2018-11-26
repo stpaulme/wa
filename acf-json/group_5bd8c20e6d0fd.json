@@ -1,10 +1,10 @@
 {
-    "key": "group_5b859e6511a63",
-    "title": "Module - Image Gallery",
+    "key": "group_5bd8c20e6d0fd",
+    "title": "Module - Form",
     "fields": [
         {
-            "key": "field_5b85a0284650c",
-            "label": "Section Heading",
+            "key": "field_5bd9bbbb05ea5",
+            "label": "Heading",
             "name": "heading",
             "type": "text",
             "instructions": "",
@@ -22,10 +22,10 @@
             "maxlength": ""
         },
         {
-            "key": "field_5b859e6c85dad",
-            "label": "Image Gallery",
-            "name": "gallery",
-            "type": "gallery",
+            "key": "field_5bd8c2152ab52",
+            "label": "Form",
+            "name": "form",
+            "type": "forms",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -34,17 +34,9 @@
                 "class": "",
                 "id": ""
             },
-            "min": "",
-            "max": "",
-            "insert": "append",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": ""
+            "return_format": "id",
+            "allow_null": 0,
+            "multiple": 0
         }
     ],
     "location": [
@@ -64,5 +56,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "",
-    "modified": 1536245692
+    "modified": 1540996035
 }

@@ -8,111 +8,151 @@
 
 	<body class="{{body_class}}" data-template="base.twig">
 
-		<header>
-			{% block header %}
+		<div id="page">
 
-				<nav class="navbar navbar-dark bg-dark py-0">
-					<div class="container">
-						<!-- Social Media -->
-						{% if options.social_media %}
-							<span class="navbar-text d-none d-lg-inline order-lg-0 mr-lg-3">
-								<a href="{{options.social_media.facebook}}" target="_blank" title="Facebook">
-									<i class="fab fa-facebook"></i>
-								</a>
-							</span>
-							<span class="navbar-text d-none d-lg-inline order-lg-0 mr-lg-3">
-								<a href="{{options.social_media.twitter}}" target="_blank" title="Twitter">
-									<i class="fab fa-twitter"></i>
-								</a>
-							</span>
-						{% endif %}
+		
+		<a class="exit" href="#">Emergency Exit</a>
+			
 
-						<!-- Home -->
-						<span class="navbar-text d-none d-lg-inline order-lg-0 mr-lg-auto"><a href="/">Home</a></span>
+			<header>
+				{% block header %}
 
-						<!-- Contact -->
-						<span class="navbar-text d-none d-lg-inline order-lg-0 mr-lg-4"><a href="/contact">Contact</a></span>
+					<nav class="header-top-nav" role="navigation">
 
-						<!-- Crisis Line -->
-						<span class="navbar-text mr-4 order-2 order-md-1 mr-md-auto order-lg-0 mr-lg-4">Crisis Line: <a href="tel:{{options.crisis_line}}">{{options.crisis_line}}</a></span>
+						<div class="container">
+							<div class="row">
+								<div class="col">
+									<div class="top-nav-items">
 
-						<!-- Donate -->
-						<a class="btn btn-secondary d-none d-lg-inline order-lg-0 mr-lg-4" href="/donate">Donate</a>
+										<!-- Social Media -->
+										{% if options.social_media %}
 
-						<!-- Emergency Exit -->
-						<a class="btn btn-warning mr-4 order-1 order-md-2 order-lg-0" href="https://google.com/">Emergency Exit</a>
+											{% if options.social_media.facebook %}
+												<a class="top-nav-item top-nav-social" href="{{options.social_media.facebook}}" target="_blank" title="Facebook">
+													<i class="soc soc-facebook"></i>	
+												</a>
+											{% endif %}
 
-						<!-- Search -->
-						<form class="form-inline order-3 order-lg-0">
-							<label class="sr-only" for="search">Search</label>
-							<div class="input-group">
-								<div class="input-group-prepend">
-									<div class="input-group-text bg-dark text-light border-0"><i class="fas fa-search"></i></div>
+											{% if options.social_media.twitter %}
+												<a class="top-nav-item top-nav-social" href="{{options.social_media.twitter}}" target="_blank" title="Twitter">
+													<i class="soc soc-twitter"></i>
+												</a>
+											{% endif %}
+
+										{% endif %}
+
+										<!-- Home -->
+										<a class="top-nav-item top-nav-home" href="/">Home</a>
+
+										<!-- Contact -->
+										<a class="top-nav-item top-nav-contact" href="/contact">Contact</a>
+
+										<!-- Crisis Line -->
+										{% if options.crisis_line %}
+											<a class="top-nav-item top-nav-crisis-line" href="tel:{{options.crisis_line}}">Crisis Line: <span>{{options.crisis_line}}</span></a>
+										{% endif %}
+
+										<!-- Donate -->
+										<a class="button button-primary top-nav-item top-nav-donate" href="https://app.etapestry.com/onlineforms/WomensAdvocates/donate.html" target="_blank">Donate</a>
+
+										<!-- Emergency Exit -->
+										<a class="button button-emergency top-nav-item top-nav-emergency-exit" href="https://google.com/">Emergency Exit</a>
+
+										<!-- Search -->
+										<form class="top-nav-item top-nav-search" method="get" action="{{site.url}}">
+											<label class="sr-only" for="search-field">Search</label>
+											<input id="search-field" name="s" type="search" placeholder="Search Site..." aria-label="Search" size="11">
+										</form>
+
+									</div>
 								</div>
-								<input class="form-control mr-sm-2 bg-dark text-light border-0 w-50" type="search" placeholder="Search Site..." aria-label="Search" id="search">
 							</div>
-						</form>
-					</div>
-				</nav>
+						</div>
 
-				<nav class="navbar navbar-light bg-light navbar-expand-lg py-2" role="navigation">
+					</nav>
 
-					<div class="container">
 
-						<span class="navbar-brand mb-0 h1" role="banner">
-							<a href="{{site.url}}" rel="home">{{site.name}}</a>
-						</span>
+					<nav class="header-bottom-nav" role="navigation">
 
-						<button class="navbar-toggler my-2" type="button" data-toggle="collapse" data-target="#navbarCollapse">
-							<span class="navbar-toggler-icon"></span>
-						</button>
+						<div class="container">
 
-						<div class="collapse navbar-collapse flex-column align-items-start ml-lg-2 ml-0" id="navbarCollapse">
-							<!-- Header Menu -->
-							<div class="navbar-nav ml-auto">
-								{% include 'menu-header.twig' with {'menu': header.get_items, } %}
+							<div class="row no-gutters">
+
+								<div class="col-8 col-lg-4">
+
+									<h1 class="logo" role="banner">
+										<a href="{{site.url}}" title="{{site.name}}" rel="home">
+											<img src="{{TimberImage(options.header_logo).src}}" alt="{{TimberImage(options.header_logo).alt}}">
+										</a>
+									</h1>
+
+								</div>
+
+								<div class="col-4 col-lg-8">
+
+									<div class="mobile-menu-container">
+										{% include 'menu.twig' with {'menu': header.get_items, 'id': 'mobile-menu' , 'show_children': true } %}
+									</div>
+
+									<div class="mobile-menu-toggle-container">
+										<a id="mobile-menu-toggle" href="#">
+											<img src="{{theme.path}}/img/menu_icon.svg" alt="Mobile Menu Toggle">
+										</a>
+									</div>
+
+									<div class="desktop-menu-container">
+										{% include 'menu.twig' with {'menu': header.get_items, 'id': 'desktop-menu' , 'show_children': false } %}
+									</div>
+
+									
+
+								</div>
+
 							</div>
 
 						</div>
-					</div>
-				</nav>
 
-			{% endblock %}
-		</header>
-
-		<section role="main" class="main">
-			{% if menu_items %}
-			<div class="container">
-				<div class="row">
-					<nav class="nav">
-						{% for item in menu_items %}
-							<a class="nav-link {{item.id == current ? 'current'}}" href="{{item.link}}">{{item.name}}</a>
-						{% endfor %}
 					</nav>
+
+				{% endblock %}
+			</header>
+
+			<section role="main" class="main">
+				{% if menu_items %}
+				<div class="sibling-menu-container">
+					<div class="container">
+						<div class="row">
+							<div class="col">
+								<ul class="sibling-menu-list">
+									{% for item in menu_items %}
+										<li class="sibling-menu-item {{item.id == current ? 'current'}}">
+											<a href="{{item.link}}">{{item.name}}</a>
+										</li>
+									{% endfor %}
+								</ul>
+							</div>
+						</div>
+					</div>
 				</div>
-			</div>
-			{% endif %}
+				{% endif %}
 
-			{% if title %}
-			<div class="container">
-				<h1 class="title">{{title}}</h1>
-			</div>
-			{% endif %}
-
-			{% block content %}
-			Sorry, no content
-			{% endblock %}
+				{% block content %}
+				Sorry, no content
+				{% endblock %}
+				
+			</section>
 			
-		</section>
-
-		<div class="container">
 			{% block footer %}
-				<footer>
-					{% include 'footer-primary.twig' %}
-					{% include 'footer-secondary.twig' %}
+				<footer class="footer">
+
+					<div class="container">
+						{% include 'footer.twig' %}
+					</div>
+
 				</footer>
 				{{ function('wp_footer') }}
 			{% endblock %}
+			
 		</div>
 		
 	</body>

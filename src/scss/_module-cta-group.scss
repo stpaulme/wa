@@ -1,0 +1,88 @@
+.background-pattern, .background-white {
+    padding: 40px 0;
+}
+
+.background-pattern {
+    background: url('../../img/pattern.png');
+}
+
+.background-white + .background-white {
+    padding-top: 0 !important;
+}
+
+.cta-group .cta {
+    margin-bottom: 20px;
+}
+
+.cta-group .cta:last-child {
+    margin-bottom: 0;
+}
+
+.cta-group .cta-image {
+    max-width: 100%;
+}
+
+.cta-text li {
+    margin-bottom: 0.3rem;
+}
+
+.cta-text li:last-child {
+    margin-bottom: 0;
+}
+
+.cta-group .cta-text {
+    background-color: #fff;
+    border-color: $light-gray;
+    border-style: solid;
+    padding: 25px 20px;
+}
+
+.cta-group .cta-text.with-image {
+    border-width: 0 1px 1px 1px;
+}
+
+.cta-group .cta-text.without-image {
+    border-width: 1px;
+}
+
+.cta-heading {
+    @include border-bottom-salmon-full;
+}
+
+.cta-text p, .cta-text ul {
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+    .background-pattern, .background-white {
+        padding: 50px 0;
+    }
+
+    .cta-group .cta {
+        margin-bottom: 40px;
+    }
+
+    .cta-group .cta-text.with-image {
+        border-width: 0;
+        padding: 25px 0;
+    }
+
+    .cta-text.without-link :last-child {
+        margin-bottom: 0;
+    }
+}
+
+@media (min-width: 992px) {
+    .cta-group-container {
+        margin-bottom: -40px;
+    }
+
+    .cta-group .cta:last-child {
+        margin-bottom: 40px;
+    }
+
+    .cta-group .cta-text.with-image {
+        border-width: 0 1px 1px 1px;
+        padding: 25px 20px;
+    }
+}

@@ -13,6 +13,7 @@ $context = Timber::get_context();
 $post = Timber::query_post();
 $context['post'] = $post;
 $context['title'] = $post->name;
+$context['sidebar'] = Timber::get_sidebar('sidebar-news.php');
 
 if ( post_password_required( $post->ID ) ) {
 	Timber::render( 'single-password.twig', $context );

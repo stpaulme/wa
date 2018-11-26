@@ -1,4 +1,20 @@
-$enable-rounded: false;
+// Custom colors
+@import "colors";
+
+$text-color: $dark-gray;
+
+$link-color: $pink;
+$link-hover-color: $dark-purple;
 $link-hover-decoration: none;
 
-@import "node_modules/bootstrap/scss/bootstrap";
+$font-family-sans-serif: 'Cabin', sans-serif;
+
+// Required Bootstrap
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins";
+
+// Optional Bootstrap
+@import "node_modules/bootstrap/scss/reboot";
+@import "node_modules/bootstrap/scss/grid";
+@import "node_modules/bootstrap/scss/forms";
