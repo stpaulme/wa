@@ -84,9 +84,6 @@ class StarterSite extends TimberSite {
 		add_post_type_support( 'page', 'excerpt' );
 		add_filter( 'timber_context', array( $this, 'add_to_context' ) );
 		add_filter( 'get_twig', array( $this, 'add_to_twig' ) );
-		if ( spm_is_local() == false ) {
-			add_filter( 'acf/settings/show_admin', array( $this, '__return_false' ) );
-		}
 		add_action( 'init', array( $this, 'spm_create_options_pages' ) );
 		add_action( 'init', array( $this, 'spm_register_nav_menus' ) );
 		add_action( 'init', array( $this, 'spm_register_post_types' ) );
