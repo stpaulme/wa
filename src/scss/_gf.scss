@@ -39,10 +39,6 @@
     @extend .button-primary;
 }
 
-.validation_message {
-    display: none;
-}
-
 .validation_error {
     padding: 1rem;
     background-color: $light-gray;
