@@ -89,9 +89,13 @@
             <ul class="list-footer list-badges">
                 {% for badge in options.badges %}
                     <li class="list-footer-item-inline">
-                        <a href="{{badge.url}}" title="{{badge.name}}" target="_blank">
+                        {% if badge.url|length > 0 %}
+                            <a href="{{badge.url}}" title="{{badge.name}}" target="_blank">
+                        {% endif %}
                             <img src="{{TimberImage(badge.image).src}}" alt="{{TimberImage(badge.image).alt}}">
-                        </a>
+                        {% if badge.url|length > 0 %}
+                            </a>
+                        {% endif %}
                     </li>
                 {% endfor %}
             </ul>

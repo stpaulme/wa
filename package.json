@@ -26,5 +26,8 @@
     "gulp-sourcemaps": "^2.6.4",
     "popper.js": "^1.14.4"
   },
-  "dependencies": {}
+  "dependencies": {
+    "js-yaml": "^3.13.1",
+    "svgo": "^1.2.2"
+  }
 }

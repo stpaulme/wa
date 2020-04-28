@@ -39,6 +39,13 @@
     @extend .button-primary;
 }
 
+.validation_error {
+    padding: 1rem;
+    background-color: $light-gray;
+    margin-bottom: 1rem;
+}
+
 .validation_message {
-    display: none;
+    font-weight: bold;
+    text-transform: uppercase;
 }
