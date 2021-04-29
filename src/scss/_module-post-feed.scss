@@ -11,19 +11,24 @@
 }
 
 .post-type-post {
-    background-image: url('../../img/pattern_blog.png');   
+    background-image: url('../../img/pattern_blog.png');
 }
 
 .post-type-event {
-    background-color: $pink; 
+    background-color: $pink;
 }
 
 .post-feed.post-type-event h2 {
     color: #fff;
 }
 
-.post-type-post .feed-post { margin-bottom: 20px; }
-.post-type-post .feed-post:last-child { margin-bottom: 0; }
+.post-type-post .feed-post {
+    margin-bottom: 20px;
+}
+
+.post-type-post .feed-post:last-child {
+    margin-bottom: 0;
+}
 
 .post-type-post .feed-post-content {
     background-color: #fff;
@@ -73,21 +78,32 @@
     content: '';
 }
 
-.feed-post-title { margin-bottom: 10px; }
+.feed-post-title {
+    margin-bottom: 10px;
+}
 
-.feed-post-title a { color: inherit; }
+.feed-post-title a {
+    color: inherit;
+}
 
 .feed-post-excerpt {
     margin-bottom: 0;
 }
 
 @media (min-width: 768px) {
-    .post-feed { padding: 50px 0; }
-    .post-type-post .feed-post { margin-bottom: 30px; }
+    .post-feed {
+        padding: 50px 0;
+    }
+
+    .post-type-post .feed-post {
+        margin-bottom: 30px;
+    }
 }
 
 @media (min-width: 992px) {
-    .post-type-post .feed-post:nth-last-child(-n+3) { margin-bottom: 0; }
+    .post-type-post .feed-post:nth-last-child(-n+3) {
+        margin-bottom: 0;
+    }
 }
 
 .post-feed .ecs-event-list {
@@ -126,11 +142,17 @@
     margin-bottom: 10px;
 }
 
-.post-feed .entry-title a { color: inherit; }
+.post-feed .entry-title a {
+    color: inherit;
+}
 
-.recurringinfo { display: none; }
+.recurringinfo {
+    display: none;
+}
 
-.ecs-excerpt { margin-bottom: 0 !important; }
+.ecs-excerpt {
+    margin-bottom: 0 !important;
+}
 
 @media (min-width: 768px) {
     .post-feed .ecs-event {
@@ -143,12 +165,14 @@
         margin-right: -15px;
         margin-left: -15px;
     }
+
     .post-feed .ecs-event {
         margin-right: 15px;
         margin-left: 15px;
         max-width: calc(50% - 30px);
         flex: 0 0 50%;
     }
+
     .post-feed .ecs-event:nth-last-child(-n+2) {
         margin-bottom: 0 !important;
     }

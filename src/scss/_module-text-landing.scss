@@ -5,6 +5,7 @@
 .text-content li {
     margin-bottom: 0.5rem;
 }
+
 .text-content li:last-child {
     margin-bottom: 0;
 }
@@ -14,7 +15,8 @@
     max-width: 100%;
 }
 
-.text-heading, .text-content h2 {
+.text-heading,
+.text-content h2 {
     @include border-bottom-salmon-partial;
 }
 
