@@ -188,9 +188,7 @@
                         "WI": "Wisconsin",
                         "WY": "Wyoming"
                     },
-                    "default_value": [
-                        "MN"
-                    ],
+                    "default_value": "MN",
                     "allow_null": 0,
                     "multiple": 0,
                     "ui": 0,
@@ -325,9 +323,57 @@
                     "placeholder": ""
                 },
                 {
+                    "key": "field_6227a11d24ed7",
+                    "label": "Instagram",
+                    "name": "instagram",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": ""
+                },
+                {
                     "key": "field_5baced1284386",
                     "label": "Twitter",
                     "name": "twitter",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_6227a0f52dcf7",
+                    "label": "YouTube",
+                    "name": "youtube",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_6227a0eb2dcf6",
+                    "label": "LinkedIn",
+                    "name": "linkedin",
                     "type": "url",
                     "instructions": "",
                     "required": 0,
@@ -457,7 +503,8 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": 1,
+    "active": true,
     "description": "",
-    "modified": 1538681602
+    "show_in_rest": 0,
+    "modified": 1646764501
 }
