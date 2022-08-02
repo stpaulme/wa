@@ -1,161 +1,156 @@
 {% block html_head_container %}
 
-{% include 'html-header.twig' %}
-	{% block head %}
-	{% endblock %}
-	</head>
-{% endblock %}
+	{% include 'html-header.twig' %}
+	{% block head %}{% endblock %}
+</head>{% endblock %}<body class="{{body_class}}" data-template="base.twig">
 
-	<body class="{{body_class}}" data-template="base.twig">
-
-		<div id="page">
-
-		
-		<a class="exit" href="#">Emergency Exit</a>
-			
-
-			<header>
-				{% block header %}
-
-					<nav class="header-top-nav" role="navigation">
-
-						<div class="container">
-							<div class="row">
-								<div class="col">
-									<div class="top-nav-items">
-
-										<!-- Social Media -->
-										{% if options.social_media %}
-
-											{% if options.social_media.facebook %}
-												<a class="top-nav-item top-nav-social" href="{{options.social_media.facebook}}" target="_blank" title="Facebook">
-													<i class="soc soc-facebook"></i>	
-												</a>
-											{% endif %}
-
-											{% if options.social_media.twitter %}
-												<a class="top-nav-item top-nav-social" href="{{options.social_media.twitter}}" target="_blank" title="Twitter">
-													<i class="soc soc-twitter"></i>
-												</a>
-											{% endif %}
-
-										{% endif %}
-
-										<!-- Home -->
-										<a class="top-nav-item top-nav-home" href="/">Home</a>
-
-										<!-- Contact -->
-										<a class="top-nav-item top-nav-contact" href="/contact">Contact</a>
-
-										<!-- Crisis Line -->
-										{% if options.crisis_line %}
-											<!--<a class="top-nav-item top-nav-crisis-line" href="tel:{{options.crisis_line}}">Crisis Line: <span>{{options.crisis_line}}</span></a>-->
-										{% endif %}
-
-										<div data-id="dad6cf1e7b" class="livechat_button top-nav-item top-nav-crisis-line"><a href="https://www.livechatinc.com/?utm_source=chat_button&utm_medium=referral&utm_campaign=lc_11861964">chat with us</a></div>
-
-										<!-- Donate -->
-										<a class="button button-primary top-nav-item top-nav-donate" href="https://app.etapestry.com/onlineforms/WomensAdvocates/donate.html" target="_blank">Donate</a>
-
-										<!-- Emergency Exit -->
-										<a class="button button-emergency top-nav-item top-nav-emergency-exit" href="https://google.com/">Emergency Exit</a>
-
-										<!-- Search -->
-										<form class="top-nav-item top-nav-search" method="get" action="{{site.url}}">
-											<label class="sr-only" for="search-field">Search</label>
-											<input id="search-field" name="s" type="search" placeholder="Search Site..." aria-label="Search" size="11">
-										</form>
-
-									</div>
-								</div>
-							</div>
-						</div>
-
-					</nav>
+<div id="page">
 
 
-					<nav class="header-bottom-nav" role="navigation">
+	<a class="exit" href="#">Emergency Exit</a>
 
-						<div class="container">
 
-							<div class="row no-gutters">
+	<header>
+		{% block header %}
 
-								<div class="col-8 col-lg-4">
+			<nav class="header-top-nav" role="navigation">
 
-									<h1 class="logo" role="banner">
-										<a href="{{site.url}}" title="{{site.name}}" rel="home">
-											<img src="{{TimberImage(options.header_logo).src}}" alt="{{TimberImage(options.header_logo).alt}}">
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							<div
+								class="top-nav-items">
+
+								<!-- Social Media -->
+								{% if options.social_media %}
+
+									{% if options.social_media.facebook %}
+										<a class="top-nav-item top-nav-social" href="{{options.social_media.facebook}}" target="_blank" title="Facebook">
+											<i class="soc soc-facebook"></i>
 										</a>
-									</h1>
+									{% endif %}
 
-								</div>
-
-								<div class="col-4 col-lg-8">
-
-									<div class="mobile-menu-container">
-										{% include 'menu.twig' with {'menu': header.get_items, 'id': 'mobile-menu' , 'show_children': true } %}
-									</div>
-
-									<div class="mobile-menu-toggle-container">
-										<a id="mobile-menu-toggle" href="#">
-											<img src="{{theme.path}}/img/menu_icon.svg" alt="Mobile Menu Toggle">
+									{% if options.social_media.twitter %}
+										<a class="top-nav-item top-nav-social" href="{{options.social_media.twitter}}" target="_blank" title="Twitter">
+											<i class="soc soc-twitter"></i>
 										</a>
-									</div>
+									{% endif %}
 
-									<div class="desktop-menu-container">
-										{% include 'menu.twig' with {'menu': header.get_items, 'id': 'desktop-menu' , 'show_children': false } %}
-									</div>
+								{% endif %}
 
-									
+								<!-- Home -->
+								<a class="top-nav-item top-nav-home" href="/">Home</a>
 
+								<!-- Contact -->
+								<a class="top-nav-item top-nav-contact" href="/contact">Contact</a>
+
+								<!-- Crisis Line -->
+								{% if options.crisis_line %}
+									<!--<a class="top-nav-item top-nav-crisis-line" href="tel:{{options.crisis_line}}">Crisis Line: <span>{{options.crisis_line}}</span></a>-->
+								{% endif %}
+
+								<div data-id="dad6cf1e7b" class="livechat_button top-nav-item top-nav-crisis-line">
+									<a href="https://www.livechatinc.com/?utm_source=chat_button&utm_medium=referral&utm_campaign=lc_11861964">chat with us</a>
 								</div>
 
-							</div>
+								<!-- Donate -->
+								<a class="button button-primary top-nav-item top-nav-donate" href="https://www.wadvocates.org/donate-today/" target="_blank">Donate</a>
 
-						</div>
+								<!-- Emergency Exit -->
+								<a class="button button-emergency top-nav-item top-nav-emergency-exit" href="https://google.com/">Emergency Exit</a>
 
-					</nav>
+								<!-- Search -->
+								<form class="top-nav-item top-nav-search" method="get" action="{{site.url}}">
+									<label class="sr-only" for="search-field">Search</label>
+									<input id="search-field" name="s" type="search" placeholder="Search Site..." aria-label="Search" size="11">
+								</form>
 
-				{% endblock %}
-			</header>
-
-			<section role="main" class="main">
-				{% if menu_items %}
-				<div class="sibling-menu-container">
-					<div class="container">
-						<div class="row">
-							<div class="col">
-								<ul class="sibling-menu-list">
-									{% for item in menu_items %}
-										<li class="sibling-menu-item {{item.id == current ? 'current'}}">
-											<a href="{{item.link}}">{{item.name}}</a>
-										</li>
-									{% endfor %}
-								</ul>
 							</div>
 						</div>
 					</div>
 				</div>
-				{% endif %}
 
-				{% block content %}
-				Sorry, no content
-				{% endblock %}
-				
-			</section>
-			
-			{% block footer %}
-				<footer class="footer">
+			</nav>
 
-					<div class="container">
-						{% include 'footer.twig' %}
+
+			<nav class="header-bottom-nav" role="navigation">
+
+				<div class="container">
+
+					<div class="row no-gutters">
+
+						<div class="col-8 col-lg-4">
+
+							<h1 class="logo" role="banner">
+								<a href="{{site.url}}" title="{{site.name}}" rel="home">
+									<img src="{{TimberImage(options.header_logo).src}}" alt="{{TimberImage(options.header_logo).alt}}">
+								</a>
+							</h1>
+
+						</div>
+
+						<div class="col-4 col-lg-8">
+
+							<div class="mobile-menu-container">
+								{% include 'menu.twig' with {'menu': header.get_items, 'id': 'mobile-menu' , 'show_children': true } %}
+							</div>
+
+							<div class="mobile-menu-toggle-container">
+								<a id="mobile-menu-toggle" href="#">
+									<img src="{{theme.path}}/img/menu_icon.svg" alt="Mobile Menu Toggle">
+								</a>
+							</div>
+
+							<div class="desktop-menu-container">
+								{% include 'menu.twig' with {'menu': header.get_items, 'id': 'desktop-menu' , 'show_children': false } %}
+							</div>
+
+
+						</div>
+
 					</div>
 
-				</footer>
-				{{ function('wp_footer') }}
-			{% endblock %}
-			
-		</div>
-		
-	</body>
-</html>
+				</div>
+
+			</nav>
+
+		{% endblock %}
+	</header>
+
+	<section role="main" class="main">
+		{% if menu_items %}
+			<div class="sibling-menu-container">
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							<ul class="sibling-menu-list">
+								{% for item in menu_items %}
+									<li class="sibling-menu-item {{item.id == current ? 'current'}}">
+										<a href="{{item.link}}">{{item.name}}</a>
+									</li>
+								{% endfor %}
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		{% endif %}
+
+		{% block content %}
+			Sorry, no content
+		{% endblock %}
+
+	</section>
+
+	{% block footer %}
+		<footer class="footer">
+
+			<div class="container">
+				{% include 'footer.twig' %}
+			</div>
+
+		</footer>
+		{{ function('wp_footer') }}
+	{% endblock %}
+
+</div></body></html>
