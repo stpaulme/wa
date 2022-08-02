@@ -1,14 +1,16 @@
 {% block html_head_container %}
-
 	{% include 'html-header.twig' %}
-	{% block head %}{% endblock %}
-</head>{% endblock %}<body class="{{body_class}}" data-template="base.twig">
+	
+	{% block head %}
+	{% endblock %}
+</head>
+{% endblock %}
+
+<body class="{{body_class}}" data-template="base.twig">
 
 <div id="page">
 
-
 	<a class="exit" href="#">Emergency Exit</a>
-
 
 	<header>
 		{% block header %}
@@ -54,7 +56,7 @@
 								</div>
 
 								<!-- Donate -->
-								<a class="button button-primary top-nav-item top-nav-donate" href="https://www.wadvocates.org/donate-today/" target="_blank">Donate</a>
+								<a class="button button-primary top-nav-item top-nav-donate" href="https://www.wadvocates.org/donate-today/">Donate</a>
 
 								<!-- Emergency Exit -->
 								<a class="button button-emergency top-nav-item top-nav-emergency-exit" href="https://google.com/">Emergency Exit</a>
@@ -153,4 +155,7 @@
 		{{ function('wp_footer') }}
 	{% endblock %}
 
-</div></body></html>
+</div>
+
+</body>
+</html>
