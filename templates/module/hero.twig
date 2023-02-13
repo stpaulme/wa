@@ -2,44 +2,52 @@
 
 <div class="module hero">
 
-    <div class="container">
-        <div class="row no-gutters">
+	<div class="container">
+		<div class="row no-gutters">
 
-            <div class="col-lg-7">
-                <img alt="{{image.alt}}" class="hero-image" src="{{image.src|resize(3200, 2135, 'center')}}">
-            </div>
+			<div class="col-lg-7">
+				{% if module.image_link.url %}
+					<a href="{{ module.image_link.url }}" target="{{ module.image_link.target }}" title="{{ module.image_link.title }}">
+					{% endif %}
+					<img alt="{{image.alt}}" class="hero-image" src="{{image.src|resize(3200, 2135, 'center')}}">
+					{% if module.image_link.url %}
+						<a href="">
+						{% endif %}
+					</div>
 
-            <div class="col-lg-5">
+					<div class="col-lg-5">
 
-                <div class="hero-content">
-                        
-                    <div class="container">
+						<div class="hero-content">
 
-                        <div class="row">
+							<div class="container">
 
-                            <div class="col-md-10 offset-md-1">
+								<div class="row">
 
-                                <h1 class="hero-heading">{{module.heading}}</h1>
-                                <p class="hero-copy">{{module.copy}}</p>
-                                {% if module.buttons %}
-                                    <ul class="list-buttons">
-                                        {% for button in module.buttons %}
-                                            <li class="list-buttons-item"><a href="{{button.link.url}}" target="{{button.link.target}}" class="button button-primary">{{button.link.title}}</a></li>
-                                        {% endfor %}
-                                    </ul>
-                                {% endif %}
+									<div class="col-md-10 offset-md-1">
 
-                            </div>
+										<h1 class="hero-heading">{{module.heading}}</h1>
+										<p class="hero-copy">{{module.copy}}</p>
+										{% if module.buttons %}
+											<ul class="list-buttons">
+												{% for button in module.buttons %}
+													<li class="list-buttons-item">
+														<a href="{{button.link.url}}" target="{{button.link.target}}" class="button button-primary">{{button.link.title}}</a>
+													</li>
+												{% endfor %}
+											</ul>
+										{% endif %}
 
-                        </div>
+									</div>
 
-                    </div>
-                        
-                </div>
+								</div>
 
-            </div>
+							</div>
 
-        </div>
-    </div>
+						</div>
 
-</div>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
