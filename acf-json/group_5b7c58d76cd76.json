@@ -6,6 +6,7 @@
             "key": "field_5b7c596c7e2a1",
             "label": "Image",
             "name": "image",
+            "aria-label": "",
             "type": "image",
             "instructions": "",
             "required": 0,
@@ -27,9 +28,26 @@
             "mime_types": ""
         },
         {
+            "key": "field_63eab47ec1edd",
+            "label": "Image Link",
+            "name": "image_link",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        },
+        {
             "key": "field_5b7c58e87e29d",
             "label": "Heading",
             "name": "heading",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -49,6 +67,7 @@
             "key": "field_5b7c58f77e29e",
             "label": "Copy",
             "name": "copy",
+            "aria-label": "",
             "type": "wysiwyg",
             "instructions": "",
             "required": 0,
@@ -68,6 +87,7 @@
             "key": "field_5b7c59027e29f",
             "label": "Button(s)",
             "name": "buttons",
+            "aria-label": "",
             "type": "repeater",
             "instructions": "",
             "required": 0,
@@ -82,11 +102,13 @@
             "max": 2,
             "layout": "table",
             "button_label": "Add Button",
+            "rows_per_page": 20,
             "sub_fields": [
                 {
                     "key": "field_5b7c59167e2a0",
                     "label": "Link",
                     "name": "link",
+                    "aria-label": "",
                     "type": "link",
                     "instructions": "",
                     "required": 0,
@@ -96,7 +118,8 @@
                         "class": "",
                         "id": ""
                     },
-                    "return_format": "array"
+                    "return_format": "array",
+                    "parent_repeater": "field_5b7c59027e29f"
                 }
             ]
         }
@@ -116,7 +139,8 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": 0,
+    "active": false,
     "description": "",
-    "modified": 1540909637
+    "show_in_rest": 0,
+    "modified": 1676326045
 }
