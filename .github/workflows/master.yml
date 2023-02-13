@@ -1,0 +1,42 @@
+name: master
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Check out repo
+      - uses: actions/checkout@v2
+
+      # Set up Node
+      - uses: actions/setup-node@v1.4.4
+        with:
+          node-version: 12
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run gulp build task
+        run: |
+          ./node_modules/gulp/bin/gulp.js style
+          ./node_modules/gulp/bin/gulp.js js
+
+      - name: Sync
+        env:
+          dest: "wadvocates@34.66.217.167:/sites/wadvocates.org/files/wp-content/themes/wa"
+        run: |
+          echo "${{secrets.DEPLOY_KEY}}" > deploy_key
+          chmod 600 ./deploy_key
+          rsync -chav --delete \
+            -e 'ssh -i ./deploy_key -o StrictHostKeyChecking=no' \
+            --exclude /deploy_key \
+            --exclude /README.md \
+            --exclude /.git/ \
+            --exclude /.github/ \
+            --exclude /.gitignore \
+            --exclude /node_modules/ \
+            ./ ${{env.dest}}
