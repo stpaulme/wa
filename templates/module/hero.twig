@@ -11,35 +11,31 @@
 					{% endif %}
 					<img alt="{{image.alt}}" class="hero-image" src="{{image.src|resize(3200, 2135, 'center')}}">
 					{% if module.image_link.url %}
-						<a href="">
-						{% endif %}
-					</div>
+					</a>
+				{% endif %}
+			</div>
 
-					<div class="col-lg-5">
+			<div class="col-lg-5">
 
-						<div class="hero-content">
+				<div class="hero-content">
 
-							<div class="container">
+					<div class="container">
 
-								<div class="row">
+						<div class="row">
 
-									<div class="col-md-10 offset-md-1">
+							<div class="col-md-10 offset-md-1">
 
-										<h1 class="hero-heading">{{module.heading}}</h1>
-										<p class="hero-copy">{{module.copy}}</p>
-										{% if module.buttons %}
-											<ul class="list-buttons">
-												{% for button in module.buttons %}
-													<li class="list-buttons-item">
-														<a href="{{button.link.url}}" target="{{button.link.target}}" class="button button-primary">{{button.link.title}}</a>
-													</li>
-												{% endfor %}
-											</ul>
-										{% endif %}
-
-									</div>
-
-								</div>
+								<h1 class="hero-heading">{{module.heading}}</h1>
+								<p class="hero-copy">{{module.copy}}</p>
+								{% if module.buttons %}
+									<ul class="list-buttons">
+										{% for button in module.buttons %}
+											<li class="list-buttons-item">
+												<a href="{{button.link.url}}" target="{{button.link.target}}" class="button button-primary">{{button.link.title}}</a>
+											</li>
+										{% endfor %}
+									</ul>
+								{% endif %}
 
 							</div>
 
@@ -48,6 +44,10 @@
 					</div>
 
 				</div>
+
 			</div>
 
 		</div>
+	</div>
+
+</div>
