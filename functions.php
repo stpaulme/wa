@@ -182,3 +182,38 @@ new StarterSite();
 
 // GF: Enable legacy markup
 add_filter('gform_enable_legacy_markup', '__return_true');
+
+// TEC: Use default events template for single event series
+add_filter(
+    'template_include',
+    function ($template) {
+        if (is_singular('tribe_event_series')) {
+            $template = locate_template('tribe/events/v2/default-template.php');
+        }
+
+        return $template;
+    }
+);
+
+// TEC: Load missing assets on single event series
+function spm_tec_load_missing_assets_on_series()
+{
+    if (is_singular('tribe_event_series')) {
+        // CSS
+        wp_enqueue_style('tribe-events-views-v2-bootstrap-datepicker-styles-css', WP_PLUGIN_URL . '/the-events-calendar/vendor/bootstrap-datepicker/css/bootstrap-datepicker.standalone.min.css');
+        wp_enqueue_style('tribe-common-skeleton-style-css', WP_PLUGIN_URL . '/the-events-calendar/common/src/resources/css/common-skeleton.min.css');
+        wp_enqueue_style('tribe-tooltipster-css-css', WP_PLUGIN_URL . '/the-events-calendar/common/vendor/tooltipster/tooltipster.bundle.min.css');
+        wp_enqueue_style('tribe-events-views-v2-skeleton-css', WP_PLUGIN_URL . '/the-events-calendar/src/resources/css/views-skeleton.min.css');
+        wp_enqueue_style('tribe-common-full-style-css', WP_PLUGIN_URL . '/the-events-calendar/common/src/resources/css/common-full.min.css');
+        wp_enqueue_style('tribe-events-views-v2-full-css', WP_PLUGIN_URL . '/the-events-calendar/src/resources/css/views-full.min.css');
+        wp_enqueue_style('tribe-events-views-v2-print-css', WP_PLUGIN_URL . '/the-events-calendar/src/resources/css/views-print.min.css');
+        wp_enqueue_style('tribe-events-pro-views-v2-skeleton-css', WP_PLUGIN_URL . '/events-calendar-pro/src/resources/css/views-skeleton.min.css');
+        wp_enqueue_style('tribe-events-pro-views-v2-full-css', WP_PLUGIN_URL . '/events-calendar-pro/src/resources/css/views-full.min.css');
+        wp_enqueue_style('tribe-events-pro-views-v2-print-css', WP_PLUGIN_URL . '/events-calendar-pro/src/resources/css/views-print.min.css');
+
+        // JS
+        wp_enqueue_script('tribe-common-js', WP_PLUGIN_URL . '/the-events-calendar/common/src/resources/js/tribe-common.min.js', );
+        wp_enqueue_script('tribe-events-views-v2-breakpoints-js', WP_PLUGIN_URL . '/the-events-calendar/src/resources/js/views/breakpoints.min.js', array('jquery'), );
+    }
+}
+add_action('wp_enqueue_scripts', 'spm_tec_load_missing_assets_on_series');

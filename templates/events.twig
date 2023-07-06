@@ -1,15 +1,7 @@
 {% extends "base.twig" %}
 
 {% block content %}
-    <div class="events-pattern">
-    <div class="container">
-        <div class="row without-hero">
-            <div class="col-md-7">
-                {{fn('tribe_events_before_html')}}
-                {{fn('tribe_get_view')}}
-                {{fn('tribe_events_after_html')}}
-            </div>
-        </div>
-    </div>
-    </div>
+	<div class="events-container">
+		{{ tribe_markup }}
+	</div>
 {% endblock %}
