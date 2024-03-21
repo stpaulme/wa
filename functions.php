@@ -1,10 +1,5 @@
 <?php
 
-// Load Composer dependencies.
-require_once __DIR__ . '/vendor/autoload.php';
-
-$timber = new Timber\Timber();
-
 function spm_get_breadcrumbs($post, $displayCurrent)
 {
     $count = 1;
@@ -166,6 +161,21 @@ class StarterSite extends TimberSite
 
         return $context;
     }
+
+    public function myfoo($text)
+    {
+        $text .= ' bar!';
+        return $text;
+    }
+
+    public function add_to_twig($twig)
+    {
+        /* this is where you can add your own functions to twig */
+        $twig->addExtension(new Twig_Extension_StringLoader());
+        $twig->addFilter('myfoo', new Twig_SimpleFilter('myfoo', array($this, 'myfoo')));
+        return $twig;
+    }
+
 }
 
 new StarterSite();

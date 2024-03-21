@@ -12,9 +12,6 @@ jobs:
       # Check out repo
       - uses: actions/checkout@v2
 
-      # Set up Composer
-      - uses: php-actions/composer@v6
-
       # Set up Node
       - uses: actions/setup-node@v1.4.4
         with:
