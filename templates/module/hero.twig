@@ -1,53 +1,66 @@
-{% set image = TimberImage(module.image) %}
+{% set has_image = module.image is defined and module.image %}
+{% if has_image %}
+    {% set image = TimberImage(module.image) %}
+{% else %}
+    {% set image = null %}
+{% endif %}
+
+{% set link = module.image_link ?? {} %}
+{% set link_url = link.url ?? null %}
+{% set link_target = link.target ?? '_self' %}
+{% set link_title = link.title ?? '' %}
 
 <div class="module hero">
+    <div class="container">
+        <div class="row no-gutters">
 
-	<div class="container">
-		<div class="row no-gutters">
-
-			<div class="col-lg-7">
-				{% if module.image_link.url %}
-					<a href="{{ module.image_link.url }}" target="{{ module.image_link.target }}" title="{{ module.image_link.title }}">
-					{% endif %}
-					<img alt="{{image.alt}}" class="hero-image" src="{{image.src|resize(3200, 2135, 'center')}}">
-					{% if module.image_link.url %}
-					</a>
+            <div class="col-lg-7">
+				{% if image and image.src %}
+					{% if link_url %}<a href="{{ link_url }}" target="{{ link_target }}" title="{{ link_title }}">{% endif %}
+						<img alt="{{ image.alt }}" class="hero-image" src="{{ image.src }}">
+					{% if link_url %}</a>{% endif %}
 				{% endif %}
 			</div>
 
-			<div class="col-lg-5">
+            <div class="col-lg-5">
+                <div class="hero-content">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-10 offset-md-1">
 
-				<div class="hero-content">
+                                {% if module.heading %}
+                                    <h1 class="hero-heading">{{ module.heading }}</h1>
+                                {% endif %}
 
-					<div class="container">
+                                {% if module.copy %}
+                                    <p class="hero-copy">{{ module.copy }}</p>
+                                {% endif %}
 
-						<div class="row">
+                                {% if module.buttons %}
+                                    <ul class="list-buttons">
+                                        {% for button in module.buttons %}
+                                            {% set b = button.link ?? null %}
+                                            {% if b and b.url %}
+                                                <li class="list-buttons-item">
+                                                    <a
+                                                        href="{{ b.url }}"
+                                                        target="{{ b.target ?? '_self' }}"
+                                                        class="button button-primary"
+                                                    >
+                                                        {{ b.title ?? 'Learn more' }}
+                                                    </a>
+                                                </li>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
 
-							<div class="col-md-10 offset-md-1">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-								<h1 class="hero-heading">{{module.heading}}</h1>
-								<p class="hero-copy">{{module.copy}}</p>
-								{% if module.buttons %}
-									<ul class="list-buttons">
-										{% for button in module.buttons %}
-											<li class="list-buttons-item">
-												<a href="{{button.link.url}}" target="{{button.link.target}}" class="button button-primary">{{button.link.title}}</a>
-											</li>
-										{% endfor %}
-									</ul>
-								{% endif %}
-
-							</div>
-
-						</div>
-
-					</div>
-
-				</div>
-
-			</div>
-
-		</div>
-	</div>
-
+        </div>
+    </div>
 </div>
