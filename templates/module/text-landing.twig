@@ -2,8 +2,15 @@
     <div class="container">
         <div class="row">
             <div class="col-md-9 col-lg-6 {{module.image_position == 'right' ? 'order-lg-last'}}">
-                {% if module.image %}
-                    <img src="{{TimberImage(module.image).src|resize(906,602)}}" alt="{{TimberImage(module.image).alt}}" class="text-image">
+                {% set has_image = module.image is defined and module.image %}
+                {% set image = has_image ? TimberImage(module.image) : null %}
+
+                {% if image and image.src %}
+                    <img
+                        class="text-image"
+                        src="{{ image.src('text_image') }}"
+                        alt="{{ image.alt }}"
+                    >
                 {% endif %}
             </div>
             <div class="col-md-12 col-lg-6 {{module.image_position == 'right' ? 'order-lg-first'}}">

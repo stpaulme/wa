@@ -175,7 +175,6 @@ class StarterSite extends TimberSite
         $twig->addFilter('myfoo', new Twig_SimpleFilter('myfoo', array($this, 'myfoo')));
         return $twig;
     }
-
 }
 
 new StarterSite();
@@ -212,8 +211,15 @@ function spm_tec_load_missing_assets_on_series()
         wp_enqueue_style('tribe-events-pro-views-v2-print-css', WP_PLUGIN_URL . '/events-calendar-pro/src/resources/css/views-print.min.css');
 
         // JS
-        wp_enqueue_script('tribe-common-js', WP_PLUGIN_URL . '/the-events-calendar/common/src/resources/js/tribe-common.min.js', );
-        wp_enqueue_script('tribe-events-views-v2-breakpoints-js', WP_PLUGIN_URL . '/the-events-calendar/src/resources/js/views/breakpoints.min.js', array('jquery'), );
+        wp_enqueue_script('tribe-common-js', WP_PLUGIN_URL . '/the-events-calendar/common/src/resources/js/tribe-common.min.js',);
+        wp_enqueue_script('tribe-events-views-v2-breakpoints-js', WP_PLUGIN_URL . '/the-events-calendar/src/resources/js/views/breakpoints.min.js', array('jquery'),);
     }
 }
 add_action('wp_enqueue_scripts', 'spm_tec_load_missing_assets_on_series');
+
+// Image sizes
+add_image_size('cta', 540, 300, true);
+add_image_size('cta_group', 640, 426, true);
+add_image_size('hero_landing', 2048, 400, true);
+add_image_size('image_band', 1024, 400, true);
+add_image_size('text_image', 906, 602, true);

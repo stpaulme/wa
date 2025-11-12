@@ -18,14 +18,16 @@
                     
                     <div class="row">
 
-                        {% if cta.image %}
-                        <div class="col-md-6 col-lg-12">
-
-                            
-                                <img src="{{TimberImage(cta.image).src|resize(640,426)}}" class="cta-image">
-                            
-
-                        </div>
+                        {% set has_image = cta.image is defined and cta.image %}
+                        {% set image = has_image ? TimberImage(cta.image) : null %}
+                        {% if image and image.src %}
+                            <div class="col-md-6 col-lg-12">
+                                <img
+                                    class="cta-image"
+                                    src="{{ image.src('cta_group') }}"
+                                    alt="{{ image.alt }}"
+                                >
+                            </div>
                         {% endif %}
 
                         <div class="col-md col-lg-12">

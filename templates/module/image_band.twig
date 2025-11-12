@@ -1,11 +1,22 @@
 <div class="module image-band">
     <div class="row no-gutters" style="text-align: center;">
 
-        {% for image in module.image_band %}
-            <div class="col-md image-band-image-{{loop.index}}">
-                <img src="{{TimberImage(image.image).src|resize(1024,400)}}" class="image-band-image">
-            </div>
-        {% endfor %}
+        {% if module.image_band is iterable and module.image_band|length %}
+            {% for item in module.image_band %}
+                {% set has_image = item.image is defined and item.image %}
+                {% set img = has_image ? TimberImage(item.image) : null %}
+
+                {% if img and img.src %}
+                    <div class="col-md image-band-image-{{ loop.index }}">
+                        <img
+                            class="image-band-image"
+                            src="{{ img.src('image_band') }}"
+                            alt="{{ img.alt }}"
+                        >
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
 
     </div>
 </div>

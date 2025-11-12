@@ -1,7 +1,19 @@
 <div class="module image">
-    {% set image = TimberImage(module.image) %}
-    <figure class="figure">
-        <img src="{{image.src|resize('900')}}" alt="{{image.alt}}" class="figure-image">
-        <figcaption class="figure-caption">{{image.caption}}</figcaption>
-    </figure>
+    {% set has_image = module.image is defined and module.image %}
+    {% set image = has_image ? TimberImage(module.image) : null %}
+
+    {% if image and image.src %}
+        {% set caption_text = image.caption ?? '' %}
+
+        <figure class="figure">
+            <img
+                src="{{ image.src }}"
+                alt="{{ image.alt }}"
+                class="figure-image"
+            >
+            {% if caption_text %}
+                <figcaption class="figure-caption">{{ caption_text }}</figcaption>
+            {% endif %}
+        </figure>
+    {% endif %}
 </div>

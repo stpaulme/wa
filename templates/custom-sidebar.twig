@@ -2,11 +2,16 @@
 
 {% block content %}
     {% set hero = post.get_field('hero') %}
-    {% set image = TimberImage(hero.image) %}
     
-    {% if image.src|length > 0 %}
+    {% set has_image = hero.image is defined and hero.image %}
+    {% set image = has_image ? TimberImage(hero.image) : null %}
+    {% if image and image.src %}
         <div class="module hero-landing">
-            <img alt="{{image.alt}}" class="hero-landing-image" src="{{image.src|resize(2048, 400, 'center')}}">
+            <img
+                class="hero-landing-image"
+                alt="{{ image.alt }}"
+                src="{{ image.src('hero_landing') }}"
+            >
         </div>
     {% endif %}
 

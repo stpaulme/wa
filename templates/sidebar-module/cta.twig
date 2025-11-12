@@ -1,7 +1,14 @@
 <div class="sidebar-module cta">
 
-    {% if module.image %}
-        <img src="{{TimberImage(module.image).src|resize(540,300)}}" alt="{{TimberImage(module.image).alt}}" class="sidebar-cta-image">
+    {% set has_image = module.image is defined and module.image %}
+    {% set image = has_image ? TimberImage(module.image) : null %}
+    
+    {% if image and image.src %}
+        <img
+            class="sidebar-cta-image"
+            src="{{ image.src('cta') }}"
+            alt="{{ image.alt }}"
+        >
     {% endif %}
 
     <div class="cta-text {{module.image ? 'with-image' : 'without-image'}} {{module.link.url|length > 0 ? 'with-link' : 'without-link'}}">

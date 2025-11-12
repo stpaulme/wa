@@ -1,5 +1,12 @@
-{% set image = TimberImage(module.image) %}
+{% set has_image = module.image is defined and module.image %}
+{% set image = has_image ? TimberImage(module.image) : null %}
 
-<div class="module hero-landing">
-    <img alt="{{image.alt}}" class="hero-landing-image" src="{{image.src|resize(2048, 400, 'center')}}">
-</div>
+{% if image and image.src %}
+    <div class="module hero-landing">
+        <img
+            class="hero-landing-image"
+            alt="{{ image.alt }}"
+            src="{{ image.src('hero_landing') }}"
+        >
+    </div>
+{% endif %}
